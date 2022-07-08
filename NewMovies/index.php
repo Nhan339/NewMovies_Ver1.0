@@ -14,7 +14,7 @@
         <h3>
         <span>
           2022 ‧ Action/Adventure |
-          <button id="mybtn" type="button" class="btn btn-outline">Watch Now</button>
+          <button id="mybtn" type="button" class="btn btn-outline"><a href="Watchmovie.php" style="color: white;">Watch Now</a></button>
         </span>
         </h3>
         <br>
@@ -41,7 +41,9 @@
               <div class="container-fluid" style="padding-right: 150px;">
                 <div class="row">
                 <div class="col-md-3">
+                  <a href="Moviedetail.php">
                   <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">
+                  </a>
                 </div>
                 <div class="col-md-3">
                   <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">

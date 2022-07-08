@@ -1,5 +1,10 @@
 .watch h1,h2{
     color: orange;
+    padding-left: 10px
+}
+
+.watch p {
+    padding-left: 10px
 }
 
 .sub-links {

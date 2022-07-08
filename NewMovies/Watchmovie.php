@@ -3,12 +3,12 @@
 ?>
 <link rel="stylesheet" href="css/watch.css">
 <div class="watch">
-<video autoplay muted loop id="myVideo">
-        <source src="images/Marvel Studios' Thor_ Love and Thunder - Teaser Trailer (2022) Chris Hemsworth, Natalie Portman.mp4" type="video/mp4">
-</video>
-    <h1 style=" padding-left: 10px">Thor and Thunder</h1>
-    <h2 style="padding-left: 10px">Tóm tắt</h1>
-    <p style="padding-left: 10px">bla bla bla bla bla bla bla bla bla bla</p>
+  <video autoplay muted loop id="myVideo">
+          <source src="images/Marvel Studios' Thor_ Love and Thunder - Teaser Trailer (2022) Chris Hemsworth, Natalie Portman.mp4" type="video/mp4">
+  </video>
+    <h1>Thor and Thunder</h1>
+    <h2>Tóm tắt</h1>
+    <p>bla bla bla bla bla bla bla bla bla bla</p>
     <span></span>
     <div class="space" style="padding-top: 5rem;">
 
