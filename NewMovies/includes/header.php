@@ -53,21 +53,21 @@
             <div class="col-6">
               <div class="d-flex mr-auto">
                 <a href="#" class="d-flex align-items-center mr-4">
-                  <span class="icon-envelope mr-2"></span>
+                  <span class="mr-2"> <i class="fa fa-envelope" aria-hidden="true"></i> </span>
                   <span class="d-none d-md-inline-block">info@domain.com</span>
                 </a>
                 <a href="#" class="d-flex align-items-center mr-auto">
-                  <span class="icon-phone mr-2"></span>
+                  <span class="mr-2"> <i class="fa fa-phone" aria-hidden="true"></i> </span>
                   <span class="d-none d-md-inline-block">+1 234 4567 8910</span>
                 </a>
               </div>
             </div>
             <div class="col-6 text-right">
               <div class="mr-auto">
-                <a href="#" class="p-2 pl-0"><span class="icon-twitter"></span></a>
-                <a href="#" class="p-2 pl-0"><span class="icon-facebook"></span></a>
-                <a href="#" class="p-2 pl-0"><span class="icon-linkedin"></span></a>
-                <a href="#" class="p-2 pl-0"><span class="icon-instagram"></span></a>
+                <a href="#" class="p-2 pl-0"><span> <i class="fab fa-twitter"></i> </span></a>
+                <a href="#" class="p-2 pl-0"><span> <i class="fab fa-facebook"></i> </span></a>
+                <a href="#" class="p-2 pl-0"><span> <i class="fab fa-linkedin"></i> </span></a>
+                <a href="#" class="p-2 pl-0"><span> <i class="fab fa-instagram"></i></span></a>
               </div>
               
             </div>
@@ -90,19 +90,11 @@
                     <li class="active"><a href="#home-section" class="nav-link">Home</a></li>
                     <li><a href="#classes-section" class="nav-link">Classes</a></li>
                     <li class="has-children">
-                      <a href="#" class="nav-link">Pages</a>
+                      <a href="#" class="nav-link">Pages</a><i class="fa fa-angle-down" style="color: #7e7e7e;" aria-hidden="true"></i> 
                       <ul class="dropdown arrow-top">
                         <li><a href="#" class="nav-link">Team</a></li>
                         <li><a href="#" class="nav-link">Pricing</a></li>
                         <li><a href="#" class="nav-link">FAQ</a></li>
-                        <li class="has-children">
-                          <a href="#">More Links</a>
-                          <ul class="dropdown">
-                            <li><a href="#">Menu One</a></li>
-                            <li><a href="#">Menu Two</a></li>
-                            <li><a href="#">Menu Three</a></li>
-                          </ul>
-                        </li>
                       </ul>
                     </li>
                     <li><a href="#about-section" class="nav-link">About</a></li>

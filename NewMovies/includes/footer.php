@@ -1,9 +1,9 @@
 <section class="link">
-      <div class="logos">
-        <a href="#"><i class="fab fa-facebook-square fa-2x logo"></i></a>
-        <a href="#"><i class="fab fa-instagram fa-2x logo"></i></a>
-        <a href="#"><i class="fab fa-twitter fa-2x logo"></i></a>
-        <a href="#"><i class="fab fa-youtube fa-2x logo"></i></a>
+      <div class="logos pt-5 pb-5 m-4">
+        <a href="#" class="p-2 pl-0"><span> <i class="fab fa-twitter fa-2x logo"></i> </span></a>
+        <a href="#" class="p-2 pl-0"><span> <i class="fab fa-facebook fa-2x logo"></i> </span></a>
+        <a href="#" class="p-2 pl-0"><span> <i class="fab fa-linkedin fa-2x logo"></i> </span></a>
+        <a href="#" class="p-2 pl-0"><span> <i class="fab fa-instagram fa-2x logo"></i></span></a>
       </div>
       <div class="sub-links">
         <ul>
@@ -33,7 +33,7 @@
 
 
 
-<script>
+<!-- <script>
       // Get the video
       var video = document.getElementById("myVideo");
       
@@ -50,7 +50,7 @@
           btn.innerHTML = "Play";
         }
       }
-      </script>
+      </script> -->
 
   
 
