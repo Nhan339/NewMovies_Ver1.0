@@ -1,6 +1,24 @@
 <?php 
   include 'includes/header.php';
 ?>
+<style>
+        /* Style the button used to pause/play the video */
+  #myBtn {
+    width: 150px;
+    font-size: 15px;
+    padding: 10px;
+    border: none;
+    background: rgba(208, 77, 12, 0);
+    outline: auto;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  #myBtn:hover {
+    background: rgb(208, 77, 12);
+    color: black;
+  }
+</style>
     <div class="hero" >
       <!-- The video -->
       <video autoplay muted loop id="myVideo">
@@ -14,19 +32,19 @@
         </div>
         <div class="film-info" style="display: grid; grid-template-columns: 1fr 2fr;">
           <h3>2022 ‧ Action/Adventure<hr></h3> 
-          <div class="watch-btn"> <a href="Watchmovie.php"> <button type="button" class="btn btn-outline">Watch Now</button></div></a>
+          <div class="watch-btn"> <a class="btn btn-lg btn-outline-warning" href="moviedetail.php" role="button">Watch Now</a></div>
           
         </div>
         <div class="film-detail">
           <p>Thor embarks on a journey unlike anything he's ever faced -- a quest for inner peace. However, his retirement gets interrupted by Gorr the God Butcher, a galactic killer who seeks the extinction of the gods.</p>
         </div>
         <br>
-        <!-- <p>
+        <!-- <div>
           <span>
-          Use a button to pause/play the video with JavaScript
-          <button id="myBtn" type="button" class="btn btn-outline" onclick="myFunction()">Pause</button>
+            <p>Use a button to pause/play the video with JavaScript</p>
+            <button id="myBtn" type="button" class="btn btn-outline" onclick="myFunction()">Pause</button>
           </span>
-        </p> -->
+        </div> -->
       </div>
     </div>
 
@@ -45,9 +63,7 @@
               <div class="container-fluid" style="padding-right: 150px;">
                 <div class="row">
                 <div class="col-md-3">
-                  <a href="Moviedetail.php">
                   <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">
-                  </a>
                 </div>
                 <div class="col-md-3">
                   <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">

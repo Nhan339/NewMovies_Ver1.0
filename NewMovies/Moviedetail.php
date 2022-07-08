@@ -18,8 +18,11 @@
                     <br>
                     <p>
                     <span>
-                        <button id="myBtn" type="button" class="btn btn-outline btn1" onclick="">Add to play-list</button>
-                        <button id="mybtn" type="button" class="btn btn-outline"><a href="Watchmovie.php" style="color: white;">Watch Now</a></button>  
+                        <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark">Add to play-list</button>
+                        <a href="Watchmovie.php">
+                        <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Watch Now</button>
+                        </a>
+                        
                     </span>
                     </p>
                 </div>

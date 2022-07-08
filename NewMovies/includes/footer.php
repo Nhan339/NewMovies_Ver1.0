@@ -1,5 +1,8 @@
 <section class="link">
-      <div class="logos pt-5 pb-5 m-4">
+  <div class="Contact" style="text-align: -webkit-center; color: whitesmoke;">
+    <h1>Contact Us:</h1>
+  </div>
+      <div class="logos pb-5 m-4">
         <a href="#" class="p-2 pl-0"><span> <i class="fab fa-twitter fa-2x logo"></i> </span></a>
         <a href="#" class="p-2 pl-0"><span> <i class="fab fa-facebook fa-2x logo"></i> </span></a>
         <a href="#" class="p-2 pl-0"><span> <i class="fab fa-linkedin fa-2x logo"></i> </span></a>
@@ -33,7 +36,7 @@
 
 
 
-<!-- <script>
+  <script>
       // Get the video
       var video = document.getElementById("myVideo");
       
@@ -50,17 +53,14 @@
           btn.innerHTML = "Play";
         }
       }
-      </script> -->
+      </script>
 
   
 
 
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/main.js"></script>
+    <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
   </body>
 </html>

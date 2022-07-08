@@ -56,7 +56,7 @@ a, a:hover {
 
 .site-navbar-wrap {
   position: absolute;
-  z-index: 99;
+  z-index: 1;
   width: 100%;
   left: 0; 
 }
@@ -520,38 +520,7 @@ a, a:hover {
         padding: 20px;
       }
 
-      /* Style the button used to pause/play the video */
-      /* #myBtn {
-        width: 150px;
-        font-size: 15px;
-        padding: 10px;
-        border: none;
-        background: rgba(208, 77, 12, 0);
-        outline: auto;
-        color: #fff;
-        cursor: pointer;
-      }
 
-      #myBtn:hover {
-        background: rgb(208, 77, 12);
-        color: black;
-      }
-
-      #mybtn {
-        width: 150px;
-        font-size: 15px;
-        padding: 10px;
-        border: none;
-        background: rgba(208, 77, 12, 0);
-        outline: auto;
-        color: #fff;
-        cursor: pointer;
-      }
-
-      #mybtn:hover {
-        background: rgb(208, 77, 12);
-        color: black;
-      } */
 
       /* CONTAINNER */
       /* .container-fluid {

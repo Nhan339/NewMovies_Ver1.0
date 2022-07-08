@@ -1,19 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>NewMovies</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1038/1038100.png" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -24,14 +19,11 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
     />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
-
-    <title>NewMovies</title>
   </head>
   <body>
 
@@ -52,24 +44,23 @@
           <div class="row align-items-center">
             <div class="col-6">
               <div class="d-flex mr-auto">
-                <a href="#" class="d-flex align-items-center mr-4">
+                <a href="#" class="d-flex align-items-center">
                   <span class="mr-2"> <i class="fa fa-envelope" aria-hidden="true"></i> </span>
                   <span class="d-none d-md-inline-block">info@domain.com</span>
                 </a>
-                <a href="#" class="d-flex align-items-center mr-auto">
+                <a href="#" class="d-flex align-items-center ms-5">
                   <span class="mr-2"> <i class="fa fa-phone" aria-hidden="true"></i> </span>
                   <span class="d-none d-md-inline-block">+1 234 4567 8910</span>
                 </a>
               </div>
             </div>
-            <div class="col-6 text-right">
+            <div class="col-6 text-right" style="text-align: end;">
               <div class="mr-auto">
                 <a href="#" class="p-2 pl-0"><span> <i class="fab fa-twitter"></i> </span></a>
                 <a href="#" class="p-2 pl-0"><span> <i class="fab fa-facebook"></i> </span></a>
                 <a href="#" class="p-2 pl-0"><span> <i class="fab fa-linkedin"></i> </span></a>
                 <a href="#" class="p-2 pl-0"><span> <i class="fab fa-instagram"></i></span></a>
               </div>
-              
             </div>
           </div>
         </div>
@@ -86,7 +77,7 @@
                 <div class="container">
                   <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
 
-                  <ul class="site-menu main-menu js-clone-nav d-none d-lg-block">
+                  <ul class="site-menu main-menu js-clone-nav d-none d-lg-block"  style="text-align: end;">
                     <li class="active"><a href="#home-section" class="nav-link">Home</a></li>
                     <li><a href="#classes-section" class="nav-link">Classes</a></li>
                     <li class="has-children">
