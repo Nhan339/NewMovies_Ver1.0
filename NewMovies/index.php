@@ -599,7 +599,7 @@ footer .dropdown-list ul.show {
             font-weight: bold;
             ">
             NEWMOVIES</h1>
-          <div class="sign-in"> <a class="btn btn-lg btn-outline-warning" href="#" role="button">Sign In</a></div>
+          <div class="sign-in"> <a class="btn btn-lg btn-outline-warning" href="signup.php" role="button">Sign In</a></div>
         </nav>
 
         <div class="inner-container">

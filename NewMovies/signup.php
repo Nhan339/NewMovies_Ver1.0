@@ -1,0 +1,73 @@
+<?php
+  include 'includes/header.php';
+?>
+<style media="screen">
+  <?php include 'css/style.css'; ?>
+  ::placeholder {
+    color: white;
+  }
+  .site-navbar-wrap {
+    position: unset !important;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+  }
+  .signup {
+  width: 100%;
+  border-radius: 3rem;
+  height: 45px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid #05feef;
+  color: white;
+  padding: 6px 12px;
+}
+
+.form-control {
+  border-radius: 2rem;
+  transition: 0.3s;
+}
+.container h1 {
+  color: #f86b1c;
+}
+</style>
+<div class="container-fluid">
+  <section>
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-4">
+            <div class="login-wrap p-0">
+              <h1 class="mb-4 text-center">Sign up</h1>
+              <form class="" action="signup.php" method="post">
+                <div class="form-group">
+                  <label for="username"></label>
+                  <input class="signup signup-username" type="text" placeholder="Username" name="username" value="" >
+                </div>
+              <!-- </form> -->
+            </div>
+                <!-- Email section -->
+              <!-- <form action="signup.php" method="post"> -->
+                <div class="form-group">
+                    <label for="email"></label>
+                    <input class="signup signup-emails" type="email" placeholder="Email" name="email" value="">
+                </div>
+                <div class="form-group">
+                    <label for="password1"></label>
+                    <input class="signup signup-password1" type="password" placeholder="Password" name="password1" value="">
+                </div>
+                <div class="form-group">
+                    <label for="password2"></label>
+                    <input class="signup signup-password2" type="password" placeholder="Confirm Password" name="password2" value="">
+                </div>
+                <br>  
+                <div class="form-group">
+                    <button class="form-control btn btn-success" type="submit" name="create-account">CREATE ACCOUNT</button>
+                </div>
+              </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<?php include 'includes/footer.php'; ?>
