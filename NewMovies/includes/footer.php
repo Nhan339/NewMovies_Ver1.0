@@ -62,5 +62,7 @@
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
+    <!-- Read more -->
+    <script type="text/javascript" src="js/watch.js"></script>
   </body>
 </html>

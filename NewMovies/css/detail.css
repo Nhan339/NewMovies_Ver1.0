@@ -5,6 +5,8 @@ p{
     color: white;
 }
 
+#more {display: none;}
+
 .content {
     position: absolute;
     top: 21rem;
