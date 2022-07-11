@@ -1,5 +1,15 @@
 <?php
   include 'includes/header.php';
+  include 'classes/user.php';
+  if(isset($_POST['create-account'])) {
+    $user_name = $_POST['username'];
+    $user_email = $_POST['email'];
+    $user_password1 = $_POST['password1'];
+    $user_password2 = $_POST['password2'];
+    $user = new User($conn);
+    $user->checkNewUser($user_name, $user_email, $user_password1, $user_password2);
+    //$errors = $user->errors;
+  }
 ?>
 <style media="screen">
   <?php include 'css/style.css'; ?>
@@ -21,7 +31,6 @@
   color: white;
   padding: 6px 12px;
 }
-
 .form-control {
   border-radius: 2rem;
   transition: 0.3s;
@@ -41,33 +50,31 @@
                 <div class="form-group">
                   <label for="username"></label>
                   <input class="signup signup-username" type="text" placeholder="Username" name="username" value="" >
-                </div>
-              <!-- </form> -->
-            </div>
-                <!-- Email section -->
-              <!-- <form action="signup.php" method="post"> -->
-                <div class="form-group">
-                    <label for="email"></label>
-                    <input class="signup signup-emails" type="email" placeholder="Email" name="email" value="">
+                  <p class="error"><?php if(isset($errors['create_username'])) {echo $errors['create_username'];} ?></p>
                 </div>
                 <div class="form-group">
-                    <label for="password1"></label>
-                    <input class="signup signup-password1" type="password" placeholder="Password" name="password1" value="">
+                  <label for="email"></label>
+                  <input class="signup signup-emails" type="email" placeholder="Email" name="email" value="">
+                  <p class="error"><?php if(isset($errors['signup_email'])) { echo $errors['signup_email'];} ?></p>  
                 </div>
                 <div class="form-group">
-                    <label for="password2"></label>
-                    <input class="signup signup-password2" type="password" placeholder="Confirm Password" name="password2" value="">
+                  <label for="password1"></label>
+                  <input class="signup signup-password1" type="password" placeholder="Password" name="password1" value="">
+                </div>
+                <div class="form-group">
+                  <label for="password2"></label>
+                  <input class="signup signup-password2" type="password" placeholder="Confirm Password" name="password2" value="">
+                  <p class="error"><?php if(isset($errors['create_password'])) { echo $errors['create_password'];} ?></p>
                 </div>
                 <br>  
                 <div class="form-group">
                     <button class="form-control btn btn-success" type="submit" name="create-account">CREATE ACCOUNT</button>
                 </div>
               </form>
-
+            </div>
           </div>
         </div>
       </div>
-    </div>
   </section>
 </div>
 <?php include 'includes/footer.php'; ?>
