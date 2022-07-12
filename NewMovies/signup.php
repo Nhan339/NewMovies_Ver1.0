@@ -1,6 +1,7 @@
 <?php
-  include 'includes/header.php';
+  //include 'includes/header.php';
   include 'classes/user.php';
+  include 'db.php';
   if(isset($_POST['create-account'])) {
     $user_name = $_POST['username'];
     $user_email = $_POST['email'];
@@ -8,7 +9,7 @@
     $user_password2 = $_POST['password2'];
     $user = new User($conn);
     $user->checkNewUser($user_name, $user_email, $user_password1, $user_password2);
-    //$errors = $user->errors;
+    $errors = $user->errors;
   }
 ?>
 <style media="screen">
@@ -39,6 +40,34 @@
   color: #f86b1c;
 }
 </style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>NewMovies</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1038/1038100.png" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
 <div class="container-fluid">
   <section>
     <div class="container">
@@ -51,6 +80,8 @@
                   <label for="username"></label>
                   <input class="signup signup-username" type="text" placeholder="Username" name="username" value="" >
                   <p class="error"><?php if(isset($errors['create_username'])) {echo $errors['create_username'];} ?></p>
+                  <p class="error"><?php if(isset($errors['signup_username'])) {echo $errors['signup_username'];} ?></p>
+                  <p class="error"><?php if(isset($errors['username_existed'])) {echo $errors['username_existed'];} ?></p>
                 </div>
                 <div class="form-group">
                   <label for="email"></label>

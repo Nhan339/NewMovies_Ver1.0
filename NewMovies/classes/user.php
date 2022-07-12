@@ -49,11 +49,11 @@ class User {
         $this->user_password2 = $user_password2;
         $this->getUsername();
         // check user name is available
-        if(!$this->minmaxChars($this->user_name, 5, 20)) {
-          $this->errors['create_password'] = "Username must be between 5-20 characters long";
+        if(!$this->minmaxChars($this->user_password1, 5, 20)) {
+          $this->errors['create_password'] = "Password must be between 5-20 characters long";
         }
-        if($this->getUsername() == 1) {
-          $errors['create_username'] = "Username already taken";
+        if(!empty($this->users['user_name'])) {
+          $this->errors['username_existed'] = "Username already taken";
         }
         if(empty($this->user_name)){
             $this->errors['signup_username'] = "Username cannot left blank";
@@ -61,6 +61,9 @@ class User {
         // validate email
         if(!filter_var($this->user_email, FILTER_VALIDATE_EMAIL)) {
           $this->errors['signup_email'] = "This email is invalid!";
+        }
+        if($this->user_password1 != $this->user_password2) {
+          $this->errors['pw_error'] = "The passwords are not match";
         }
         //create new user and login
         if(empty($this->errors)) {

@@ -33,8 +33,6 @@ include 'db.php';
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-
-
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
@@ -43,7 +41,6 @@ include 'db.php';
       </div>
       <div class="site-mobile-menu-body"></div>
     </div> <!-- .site-mobile-menu -->
-    
     
     <div class="site-navbar-wrap">
       <div class="site-navbar-top">
