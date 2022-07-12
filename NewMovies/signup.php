@@ -17,12 +17,6 @@
   ::placeholder {
     color: white;
   }
-  .site-navbar-wrap {
-    position: unset !important;
-    z-index: 1;
-    width: 100%;
-    left: 0;
-  }
   .signup {
   width: 100%;
   border-radius: 3rem;
@@ -31,6 +25,9 @@
   border: 1px solid #05feef;
   color: white;
   padding: 6px 12px;
+}
+.row {
+  margin-top: 8rem !important;
 }
 .form-control {
   border-radius: 2rem;
@@ -87,15 +84,19 @@
                   <label for="email"></label>
                   <input class="signup signup-emails" type="email" placeholder="Email" name="email" value="">
                   <p class="error"><?php if(isset($errors['signup_email'])) { echo $errors['signup_email'];} ?></p>  
+                  <p class="error"><?php if(isset($errors['email_existed'])) { echo $errors['email_existed'];} ?></p>  
                 </div>
                 <div class="form-group">
                   <label for="password1"></label>
                   <input class="signup signup-password1" type="password" placeholder="Password" name="password1" value="">
+                  <p class="error"><?php if(isset($errors['create_password'])) { echo $errors['create_password'];} ?></p>
+                  <p class="error"><?php if(isset($errors['pw_error'])) { echo $errors['pw_error'];} ?></p>
                 </div>
                 <div class="form-group">
                   <label for="password2"></label>
                   <input class="signup signup-password2" type="password" placeholder="Confirm Password" name="password2" value="">
                   <p class="error"><?php if(isset($errors['create_password'])) { echo $errors['create_password'];} ?></p>
+                  <p class="error"><?php if(isset($errors['pw_error'])) { echo $errors['pw_error'];} ?></p>
                 </div>
                 <br>  
                 <div class="form-group">

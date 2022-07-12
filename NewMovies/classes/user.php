@@ -30,6 +30,15 @@ class User {
           $this->users = $results->fetch_assoc();
         }
     }
+    public function checkEmails($user_email) {
+      $this->user_email = $user_email;
+      $sql = "SELECT * FROM users WHERE email = ?";
+      $stmt = $this->conn->prepare($sql);
+      $stmt->bind_param("s", $this->user_email);
+      $stmt->execute();
+      $results = $stmt->get_result();
+      return $results->num_rows;
+    }
     public function createAccount(){
       $this->user_hash = password_hash($this->user_password1, PASSWORD_DEFAULT);
       $sql = "INSERT INTO users (user_name, email, hash) VALUES (?,?,?)";
@@ -52,8 +61,11 @@ class User {
         if(!$this->minmaxChars($this->user_password1, 5, 20)) {
           $this->errors['create_password'] = "Password must be between 5-20 characters long";
         }
-        if(!empty($this->users['user_name'])) {
+        if(!empty($this->users)) {
           $this->errors['username_existed'] = "Username already taken";
+        }
+        if($this->checkEmails($this->user_email) == 1) {
+          $this->errors['email_existed'] = "Email already exist";
         }
         if(empty($this->user_name)){
             $this->errors['signup_username'] = "Username cannot left blank";
