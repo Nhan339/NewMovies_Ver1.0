@@ -1,3 +1,13 @@
+<?php 
+include 'classes/user.php';
+include 'db.php';
+if(isset($_POST['start'])) {
+  $user_email = $_POST['email'];
+  $user = new User($conn);
+  $user->checkLogin($user_email);
+  $errors = $user->errors;
+}
+?>
 <style>
 /* global setting */
 * {
@@ -615,13 +625,15 @@ footer .dropdown-list ul.show {
               Ready to watch? Enter your email to create or restart your
               membership.
             </h4>
-
-            <div class="get-started">
-              <input type="text" name="" id="" placeholder="Email address" />
-              <a href="Homepage.php" class="btn btn-lg btn-warning"
-                >Get started <i class="fas fa-chevron-right"></i
-              ></a>
-            </div>
+            <form class="" action="index.php" method="post">
+              <div class="get-started">
+                <label for="email"></label>
+                <input class="" type="email" name="email" placeholder="Email address" value=""/>
+                <button class="btn btn-lg btn-warning" type="submit" name="start">Get started<i class="fas fa-chevron-right"></i></button>
+              </div>
+              <br>
+              <p class="text-danger error"><?php if(isset($errors['unexisted_email'])) {echo $errors['unexisted_email'];} ?></p>
+            </form>
           </div>
         </div>
         <div class="overlay"></div>

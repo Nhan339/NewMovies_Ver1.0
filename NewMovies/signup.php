@@ -76,27 +76,27 @@
                 <div class="form-group">
                   <label for="username"></label>
                   <input class="signup signup-username" type="text" placeholder="Username" name="username" value="" >
-                  <p class="error"><?php if(isset($errors['create_username'])) {echo $errors['create_username'];} ?></p>
-                  <p class="error"><?php if(isset($errors['signup_username'])) {echo $errors['signup_username'];} ?></p>
-                  <p class="error"><?php if(isset($errors['username_existed'])) {echo $errors['username_existed'];} ?></p>
+                  <p class="text-danger error"><?php if(isset($errors['create_username'])) {echo $errors['create_username'];} ?></p>
+                  <p class="text-danger error"><?php if(isset($errors['signup_username'])) {echo $errors['signup_username'];} ?></p>
+                  <p class="text-danger error"><?php if(isset($errors['username_existed'])) {echo $errors['username_existed'];} ?></p>
                 </div>
                 <div class="form-group">
                   <label for="email"></label>
                   <input class="signup signup-emails" type="email" placeholder="Email" name="email" value="">
-                  <p class="error"><?php if(isset($errors['signup_email'])) { echo $errors['signup_email'];} ?></p>  
-                  <p class="error"><?php if(isset($errors['email_existed'])) { echo $errors['email_existed'];} ?></p>  
+                  <p class="text-danger error"><?php if(isset($errors['signup_email'])) { echo $errors['signup_email'];} ?></p>  
+                  <p class="text-danger error"><?php if(isset($errors['email_existed'])) { echo $errors['email_existed'];} ?></p>  
                 </div>
                 <div class="form-group">
                   <label for="password1"></label>
                   <input class="signup signup-password1" type="password" placeholder="Password" name="password1" value="">
-                  <p class="error"><?php if(isset($errors['create_password'])) { echo $errors['create_password'];} ?></p>
-                  <p class="error"><?php if(isset($errors['pw_error'])) { echo $errors['pw_error'];} ?></p>
+                  <p class="text-danger error"><?php if(isset($errors['create_password'])) { echo $errors['create_password'];} ?></p>
+                  <p class="text-danger error"><?php if(isset($errors['pw_error'])) { echo $errors['pw_error'];} ?></p>
                 </div>
                 <div class="form-group">
                   <label for="password2"></label>
                   <input class="signup signup-password2" type="password" placeholder="Confirm Password" name="password2" value="">
-                  <p class="error"><?php if(isset($errors['create_password'])) { echo $errors['create_password'];} ?></p>
-                  <p class="error"><?php if(isset($errors['pw_error'])) { echo $errors['pw_error'];} ?></p>
+                  <p class="text-danger error"><?php if(isset($errors['create_password'])) { echo $errors['create_password'];} ?></p>
+                  <p class="text-danger error"><?php if(isset($errors['pw_error'])) { echo $errors['pw_error'];} ?></p>
                 </div>
                 <br>  
                 <div class="form-group">
