@@ -61,10 +61,11 @@ class User {
       }
     }
     public function createAccount(){
+      $this->user_role = 3;
       $this->user_hash = password_hash($this->user_password1, PASSWORD_DEFAULT);
-      $sql = "INSERT INTO users (user_name, email, hash) VALUES (?,?,?)";
+      $sql = "INSERT INTO users (user_name, email, hash, user_role) VALUES (?,?,?,?)";
       $stmt = $this->conn->prepare($sql);
-      $stmt->bind_param("sss", $this->user_name, $this->user_email, $this->user_hash);
+      $stmt->bind_param("sssi", $this->user_name, $this->user_email, $this->user_hash, $this->user_role);
       $stmt->execute();
       if($stmt->affected_rows == 1) {
         $this->getUsername();

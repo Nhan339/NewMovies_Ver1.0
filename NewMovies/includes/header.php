@@ -84,7 +84,7 @@ include 'db.php';
               ">
               <a href="Homepage.php">NewMovies</a></h1>
             </div>
-            <div class="col-10">
+            <div class="col-8">
               <nav class="site-navigation text-right" role="navigation">
                 <div class="container">
                   <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
@@ -104,6 +104,17 @@ include 'db.php';
                     <li><a href="#events-section" class="nav-link">Events</a></li>
                     <li><a href="#gallery-section" class="nav-link">Gallery</a></li>
                     <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+            <div class="col-2">
+              <nav class="site-navigation text-left" role="navigation">
+                <div class="container">
+                  <ul class="site-menu main menu" style="text-align: end;">
+                    <li class="nav-item active logout">
+                      <a class="nav-link" href="logout.php">Logout</a>
+                    </li>
                   </ul>
                 </div>
               </nav>
