@@ -18,6 +18,11 @@
     background: rgb(208, 77, 12);
     color: black;
   }
+
+  .owl-nav {
+    visibility: hidden;
+  }
+
 </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,220 +85,197 @@
 
 
 
-<!-- CAROUSEL FOR ACTION MOVIES -->
-    <div class="container-fluid pt-lg-5">
-      <div class="tile">
-        <h2 style="color: white;" >Action movies:</h2>
-      </div>
-        <div id="carouselActionFlim" class="carousel slide" data-mdb-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active"  data-mdb-interval="10000">
-              <div class="container-fluid" style="padding-right: 150px;">
-                <div class="row">
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">
+<!-- CAROUSEL FOR ROMANTIC MOVIES -->
+<div class="container-fluid pt-lg-5">
+  <div class="tile">
+    <h2 style="color: white;" >Romantic movies:</h2>
+  </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">
-                </div>
-              </div>
             </div>
-            </div>
-            <div class="carousel-item"  data-mdb-interval="2000">
-            <div class="container-fluid" style="padding-right: 150px;">
-                <div class="row">
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">
-                </div>
-              </div>
-            </div>
-            </div>
-            <div class="carousel-item">
-            <div class="container-fluid" style="padding-right: 150px;">
-                <div class="row">
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
-
-          <button class="carousel-control-next" type="button" data-mdb-target="#carouselActionFlim" data-mdb-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
     </div>
 
 
-
-
-
 <!-- CAROUSEL FOR HORROR MOVIES -->
-    <div class="container-fluid pt-lg-5">
-      <div class="tile">
-        <h2 style="color: white;" >Horror movies:</h2>
-      </div>
-        <div id="carouselHorrorFlim" class="carousel slide" data-mdb-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active"  data-mdb-interval="10000">
-              <div class="container-fluid" style="padding-right: 150px;">
-                <div class="row">
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="">
+<div class="container-fluid">
+  <div class="tile">
+    <h2 style="color: white;" >Horror movies:</h2>
+  </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="">
-                </div>
-              </div>
             </div>
-            </div>
-            <div class="carousel-item"  data-mdb-interval="2000">
-            <div class="container-fluid" style="padding-right: 150px;">
-                <div class="row">
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="">
-                </div>
-              </div>
-            </div>
-            </div>
-            <div class="carousel-item">
-            <div class="container-fluid" style="padding-right: 150px;">
-                <div class="row">
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="">
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
-
-          <button class="carousel-control-next" type="button" data-mdb-target="#carouselHorrorFlim" data-mdb-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
     </div>
 
 
 <!-- CAROUSEL FOR ROMANCE MOVIES -->
-    <div class="container-fluid pt-lg-5">
-      <div class="tile">
-        <h2 style="color: white;" >Romance movies:</h2>
-      </div>
-        <div id="carouselRomanceFlim" class="carousel slide" data-mdb-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active"  data-mdb-interval="10000">
-              <div class="container-fluid" style="padding-right: 150px;">
-              <div class="row">
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="">
+<div class="container-fluid">
+  <div class="tile">
+    <h2 style="color: white;" >Action movies:</h2>
+  </div>
+        <div class="row">
+            <div class="col-12 m-auto">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                            <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="" >
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="">
-                </div>
-              </div>
             </div>
-            </div>
-            <div class="carousel-item"  data-mdb-interval="2000">
-            <div class="container-fluid" style="padding-right: 150px;">
-            <div class="row">
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="">
-                </div>
-              </div>
-            </div>
-            </div>
-            <div class="carousel-item">
-            <div class="container-fluid" style="padding-right: 150px;">
-                <div class="row">
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="">
-                </div>
-                <div class="col-md-3">
-                  <img class="img-thumbnail" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/the-boys-season-3.jpg" alt="">
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
-
-          <button class="carousel-control-next" type="button" data-mdb-target="#carouselRomanceFlim" data-mdb-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
     </div>
+
 
     
 
