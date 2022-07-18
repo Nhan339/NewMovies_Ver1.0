@@ -5,8 +5,7 @@
     <div class="container-fluid pt-lg-5">
     <div class="detail">
         <div class="row">
-        <div class="col-md-6">
-            
+            <div class="col-md-6">
                 <img class="img-thumbnail" src="images/thor-love-and-thunder-poster.jpg" alt="">
                 <div class="content">
                     <h1>Thỏ bay màu</h1>
@@ -21,13 +20,11 @@
                         <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark">Add to play-list</button>
                         <a href="Watchmovie.php">
                         <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Watch Now</button>
-                        </a>
-                        
+                        </a> 
                     </span>
                     </p>
                 </div>
-
-        </div>
+            </div>
         <div class="col-md-6">
             <div class="row">
             <div class="col-md-6"> 
@@ -42,9 +39,7 @@
                 <button onclick="myFunction()" id="myBtn" style="color: white;border: #141414;background-color: #141414;width: fit-content; margin-left: 42%">Read more</button>
         </div>
         </div>
-        <div class="space" style="padding-top: 5rem;">
-
-    </div>
+        <div class="space" style="padding-top: 5rem;"></div>
 
         <div class="Similar-content">
     <div class="tile">

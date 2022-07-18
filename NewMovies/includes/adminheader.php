@@ -56,33 +56,6 @@ include 'db.php';
     </div> <!-- .site-mobile-menu -->
     
     <div class="site-navbar-wrap">
-      <div class="site-navbar-top">
-        <div class="container py-3">
-          <div class="row align-items-center">
-            <div class="col-6">
-              <div class="d-flex mr-auto">
-                <a href="#" class="d-flex align-items-center">
-                  <span class="mr-2"> <i class="fa fa-envelope" aria-hidden="true"></i> </span>
-                  <span class="d-none d-md-inline-block">info@domain.com</span>
-                </a>
-                <a href="#" class="d-flex align-items-center ms-5">
-                  <span class="mr-2"> <i class="fa fa-phone" aria-hidden="true"></i> </span>
-                  <span class="d-none d-md-inline-block">+1 234 4567 8910</span>
-                </a>
-              </div>
-            </div>
-            <div class="col-6 text-right" style="text-align: end;">
-              <div class="mr-auto">
-                <a href="#" class="p-2 pl-0"><span> <i class="fab fa-twitter"></i> </span></a>
-                <a href="#" class="p-2 pl-0"><span> <i class="fab fa-facebook"></i> </span></a>
-                <a href="#" class="p-2 pl-0"><span> <i class="fab fa-linkedin"></i> </span></a>
-                <a href="#" class="p-2 pl-0"><span> <i class="fab fa-instagram"></i></span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="site-navbar site-navbar-target js-sticky-header">
         <div class="container">
           <div class="row align-items-center">
