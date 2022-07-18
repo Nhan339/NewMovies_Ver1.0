@@ -22,9 +22,12 @@
   border-radius: 3rem;
   height: 45px;
   background: rgba(255,255,255,0.08);
-  border: 1px solid #05feef;
+  border: 1px solid #ffa900;
   color: white;
   padding: 6px 12px;
+}
+.logo {
+  color: #ffa900 !important;
 }
 .row {
   margin-top: 8rem !important;
@@ -100,7 +103,7 @@
                 </div>
                 <br>  
                 <div class="form-group">
-                    <button class="form-control btn btn-success" type="submit" name="create-account">CREATE ACCOUNT</button>
+                    <button class="form-control btn btn-warning" type="submit" name="create-account">CREATE ACCOUNT</button>
                 </div>
               </form>
             </div>

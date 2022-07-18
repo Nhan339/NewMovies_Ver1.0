@@ -1,5 +1,6 @@
 <?php 
   include 'includes/header.php';
+  //var_dump($_SESSION['loggedin']);
 ?>
 <style>
         /* Style the button used to pause/play the video */
