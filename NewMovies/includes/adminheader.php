@@ -70,7 +70,7 @@ include 'db.php';
               ">
               <a href="Homepage.php">NewMovies</a></h1>
             </div>
-            <div class="col-8">
+            <div class="col-7">
               <nav class="site-navigation text-right" role="navigation">
                 <div class="container">
                   <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
@@ -94,10 +94,13 @@ include 'db.php';
                 </div>
               </nav>
             </div>
-            <div class="col-2">
+            <div class="col-3">
               <nav class="site-navigation text-left" role="navigation">
                 <div class="container">
                   <ul class="site-menu main menu" style="text-align: end;">
+                    <li class="nav-item avtive">
+                      <a href="#" class="nav-link">Hello, <?php echo htmlspecialchars($_SESSION['user_name']); ?></a>
+                    </li>
                     <li class="nav-item active logout">
                       <a class="nav-link" href="logout.php">Logout</a>
                     </li>

@@ -4,8 +4,9 @@ include 'classes/user.php';
 include 'db.php';
 if(isset($_POST['start'])) {
   $user_email = $_POST['email'];
+  $password = $_POST['password'];
   $user = new User($conn);
-  $user->checkLogin($user_email);
+  $user->checkLogin($user_email, $password);
   $errors = $user->errors;
 }
 ?>

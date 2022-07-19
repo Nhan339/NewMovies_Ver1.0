@@ -106,7 +106,7 @@ include 'db.php';
                     <li class="active"><a href="#home-section" class="nav-link">Home</a></li>
                     <li><a href="#classes-section" class="nav-link">Classes</a></li>
                     <li class="has-children">
-                      <a href="#" class="nav-link">Pages</a><i class="fa fa-angle-down" style="color: #7e7e7e;" aria-hidden="true"></i> 
+                      <a href="#" class="nav-link">Pages</a><i class="fa fa-angle-down" style="color: #7e7e7e;" aria-hidden="true"></i>
                       <ul class="dropdown arrow-top">
                         <li><a href="#" class="nav-link">Team</a></li>
                         <li><a href="#" class="nav-link">Pricing</a></li>

@@ -50,11 +50,12 @@ class User {
         $this->users = $results->fetch_assoc();
       }
     }
-    public function checkLogin($user_email) {
+    public function checkLogin($user_email, $user_password1) {
       $this->user_email = $user_email;
+      $this->user_password1 = $user_password1;
       $this->checkExistedEmail();
-      if(empty($this->users)) {
-        $this->errors['unexisted_email'] = "*This email does not exist";
+      if(empty($this->users) || !password_verify($this->user_password1, $this->users['hash'])) {
+        $this->errors['unexisted_email'] = "*Incorrect email or password";
       } else {
         $this->checkExistedEmail();
         $this->login();
