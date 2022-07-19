@@ -1,6 +1,5 @@
 <?php 
   include 'includes/header.php';
-  var_dump($_SESSION['loggedin']);
   //var_dump($_SESSION['email']);
   //var_dump($_SESSION['user_name']);
 ?>

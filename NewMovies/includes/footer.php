@@ -64,6 +64,7 @@
     <script type="text/javascript"></script>
     <!-- Read more -->
     <script type="text/javascript" src="js/watch.js"></script>
+    <script type="text/javascript" src="js/edit.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 

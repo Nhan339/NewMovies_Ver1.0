@@ -630,6 +630,7 @@ footer .dropdown-list ul.show {
               <div class="get-started">
                 <label for="email"></label>
                 <input class="" type="email" name="email" placeholder="Email address" value=""/>
+                <input class="" type="password" name="password" placeholder="Password" value=""/>
                 <button class="btn btn-lg btn-warning" type="submit" name="start">Get started<i class="fas fa-chevron-right"></i></button>
               </div>
               <br>
