@@ -1,6 +1,7 @@
 <?php 
   include 'includes/header.php';
-  //var_dump($_SESSION['loggedin']);
+  var_dump($_SESSION['loggedin']);
+  var_dump($_SESSION['user_name']);
 ?>
 <style>
         /* Style the button used to pause/play the video */
@@ -9,7 +10,7 @@
     font-size: 15px;
     padding: 10px;
     border: none;
-    background: rgba(208, 77, 12, 0);
+    background: (208, 77, 12, 0);
     outline: auto;
     color: #fff;
     cursor: pointer;

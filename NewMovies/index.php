@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include 'classes/user.php';
 include 'db.php';
 if(isset($_POST['start'])) {

@@ -57,6 +57,7 @@ class User {
       if(empty($this->email)) {
         $this->errors['unexisted_email'] = "*This email does not exist";
       } else {
+        $this->checkExistedEmail($this->user_email);
         $this->login();
       }
     }
@@ -108,6 +109,7 @@ class User {
     public function login() {
       //$_SESSION['user_id'] = $this->users['ID'];
       $_SESSION['user_name'] = $this->users['user_name'];
+      $_SESSION['mail_login'] = $this->email['user_name'];
       $_SESSION['loggedin'] = true;
       header("Location: Homepage.php?login=success");
     }
