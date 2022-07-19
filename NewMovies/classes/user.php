@@ -108,6 +108,7 @@ class User {
     public function login() {
       //$_SESSION['user_id'] = $this->users['ID'];
       $_SESSION['user_name'] = $this->users['user_name'];
+      $_SESSION['mail_login'] = $this->email['user_name'];
       $_SESSION['loggedin'] = true;
       header("Location: Homepage.php?login=success");
     }
