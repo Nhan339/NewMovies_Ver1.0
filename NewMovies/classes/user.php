@@ -108,9 +108,13 @@ class User {
     public function login() {
       //$_SESSION['user_id'] = $this->users['ID'];
       $_SESSION['user_name'] = $this->users['user_name'];
-      $_SESSION['mail_login'] = $this->email['user_name'];
+      $_SESSION['user_role'] = $this->users['user_role'];
       $_SESSION['loggedin'] = true;
-      header("Location: Homepage.php?login=success");
+      if($_SESSION['user_role'] == 1) {
+        header("Location: admin.php?login=success");
+      } else {
+        header("Location: Homepage.php?login=success");
+      }
     }
     public static function logout() {
       $_SESSION = [];

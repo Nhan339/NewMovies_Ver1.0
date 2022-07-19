@@ -35,7 +35,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card">
-                            <img src="images/thor-love-and-thunder-poster.jpg" alt="">       
+                            <img src="images/thor-love-and-thunder-poster.jpg" alt="">
                                 <h1>Thỏ bay màu</h1>
                                 <h3>
                                 <span>
