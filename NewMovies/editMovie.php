@@ -14,7 +14,14 @@ $errors = [];
         color: #f86b1c;
     }
     .form-control {
-        background: rgba();
+        background: rgba(255,255,255,0.08);
+        border: 1px solid #ffa900;
+    }
+    ::placeholder {
+    color: white!important;
+    }
+    label {
+        color: #f86b1c;
     }
 </style>
 <br>
@@ -24,18 +31,18 @@ $errors = [];
   <div class="row">
       
       <div class="mt-3 col-md-6 offset-md-3">
-        <h1>Post content</h1>
+        <h1>Edit here, bitch</h1>
         
         <form action="editPost.php" method="post" enctype="multipart/form-data">     
-          <label for="chapter">Chapters</label>
-          <input type="text" name="chapter" placeholder="Your chapter..." value="" class="form-control">
+          <label for="chapter">Movie name</label>
+          <input type="text" name="chapter" placeholder="Move name here" value="" class="form-control">
           <br>
 
-          <label for="content_info">Content info</label>
-          <textarea name="content_info" class="form-control" placeholder="Content description" rows="8" cols="80"></textarea>
+          <label for="content_info">Movie description</label>
+          <textarea name="content_info" class="form-control" placeholder="Movie description" rows="8" cols="80"></textarea>
           <br>
 
-          <button type="submit" name="create-content" class="btn btn-outline-dark btn-block"> <i class="fas fa-edit"></i> Post Quiz</button>
+          <button type="submit" name="create-content" class="btn btn-warning btn-block"> <i class="fas fa-edit"></i> Confirm</button>
        </form>
       </div>
     

@@ -40,23 +40,23 @@ class User {
       $results = $stmt->get_result();
       return $results->num_rows;
     }
-    public function checkExistedEmail($user_email) {
-      $this->user_email = $user_email;
+    public function checkExistedEmail() {
       $sql = "SELECT * FROM users WHERE email = ?";
       $stmt = $this->conn->prepare($sql);
       $stmt->bind_param("s", $this->user_email);
       $stmt->execute();
       $results = $stmt->get_result();
       if($results->num_rows == 1) {
-        $this->email = $results->fetch_assoc();
+        $this->users = $results->fetch_assoc();
       }
     }
     public function checkLogin($user_email) {
       $this->user_email = $user_email;
-      $this->checkExistedEmail($this->user_email);
-      if(empty($this->email)) {
+      $this->checkExistedEmail();
+      if(empty($this->users)) {
         $this->errors['unexisted_email'] = "*This email does not exist";
       } else {
+        $this->checkExistedEmail();
         $this->login();
       }
     }
