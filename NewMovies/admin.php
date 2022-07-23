@@ -285,7 +285,7 @@ ul.nav-list {
        <span class="tooltip">Files</span>
      </li>
      <li>
-       <a href="uploadUI.php">
+       <a href="upload.php">
          <i class='bx bx-folder' ></i>
          <span class="links_name">Upload Movie</span>
        </a>
