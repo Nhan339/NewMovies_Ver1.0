@@ -38,7 +38,7 @@
 	        	
 	        </video>
 			<?php echo $video['video_name']; ?>
-
+			<a class="btn btn-outline-light" href="editMovie">Edit <i class="fa-solid fa-pen-to-square"></i></a>
 	    <?php 
 	     }
 		 }else {
