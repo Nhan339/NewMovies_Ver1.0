@@ -24,7 +24,7 @@
 	</style>
 </head>
 <body>
-	<a href="uploadUI.php">UPLOAD</a>
+	<a href="upload.php">UPLOAD</a>
 	<div class="alb">
 		<?php 
 		 include "db_conn.php";
