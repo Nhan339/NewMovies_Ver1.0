@@ -1,3 +1,4 @@
+<?php     include 'function/search.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +25,23 @@
 	</style>
 </head>
 <body>
-	<a href="uploadUI.php">UPLOAD</a>
+	<a href="upload.php">UPLOAD</a>
+	<section class="search">
+        <div class="container">
+            <form action="searchview.php" method="get">
+            <div class="all-input">
+                <div>
+                    <label for="">Search</label>
+                    <input type="text" name="search" >
+                </div>
+            </div>
+
+       
+            <button class="btn-primary" type="submit" name="ok" value="search"> Search <span></span> </button>
+            </form>
+        </div>
+    </section>
+
 	<div class="alb">
 		<?php 
 		 include "db_conn.php";
@@ -38,7 +55,7 @@
 	        	
 	        </video>
 			<?php echo $video['video_name']; ?>
-
+			<a class="btn btn-outline-light" href="editMovie">Edit <i class="fa-solid fa-pen-to-square"></i></a>
 	    <?php 
 	     }
 		 }else {
