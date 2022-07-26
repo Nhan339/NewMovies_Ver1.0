@@ -55,7 +55,7 @@ a, a:hover {
 }
 
 .site-navbar-wrap {
-  position: absolute;
+  position:absolute;
   z-index: 1;
   width: 100%;
   left: 0; 
@@ -690,4 +690,22 @@ footer {
 
 .logos {
   text-align: center;
+}
+input {
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
 }

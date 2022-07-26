@@ -17,7 +17,6 @@
       </div>
       <div class="profile-name">Beni Smith</div>
       <p class="about">User Interface Designer and<br>front-end developer</p>
-      <button class="follow-btn"><a  href="logout.php">Logout</a></button>
       <button class="follow-btn">Update</button>
     </div>
 <?php 

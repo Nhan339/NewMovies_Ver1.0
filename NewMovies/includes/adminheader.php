@@ -81,9 +81,7 @@ include 'db.php';
                     <li class="has-children">
                       <a href="#" class="nav-link">Pages</a><i class="fa fa-angle-down" style="color: #7e7e7e;" aria-hidden="true"></i> 
                       <ul class="dropdown arrow-top">
-                        <li><a href="#" class="nav-link">Team</a></li>
-                        <li><a href="#" class="nav-link">Pricing</a></li>
-                        <li><a href="#" class="nav-link">FAQ</a></li>
+                        <li><a  href="logout.php">Logout</a></li>
                       </ul>
                     </li>
                     <li><a href="#about-section" class="nav-link">About</a></li>
