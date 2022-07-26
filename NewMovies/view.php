@@ -58,8 +58,7 @@
 			echo ("ID: ");
 				echo $video['movie_id'];
 			?>
-			
-			<a class="btn btn-outline-light" href="editMovie.php">Edit <i class="fa-solid fa-pen-to-square"></i></a>
+			<?php echo "<a class='btn btn-outline-light' href='editMovie.php?id={$video['movie_id']}'>Edit <i class='fa-solid fa-pen-to-square'></i></a>" ?>
 	    <?php 
 	     }
 		 }else {
