@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include 'classes/Videos.php';
+  include 'classes/movie.php';
   include "db_conn.php";
   if(isset($_POST['submit']) && isset($_FILES['my_video'])) {
 	$video_name = $_FILES['my_video']['name'];
@@ -8,8 +8,8 @@
 	$tmp_name = $_FILES['my_video']['tmp_name'];
 	$error = $_FILES['my_video']['error'];
 	
-	$film = new videos($conn);
-	$film->Upload();
+	$film = new Movie($conn);
+	$film->Upload_movie();
   }
 ?>
 <!DOCTYPE html>
