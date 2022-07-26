@@ -21,19 +21,22 @@ class Movie {
             $this->movie = $results->fetch_assoc();
           }
     }
-    public function updateMovie($movie_name) {
+    public function updateMovie($movie_name, $movie_id) {
+        $this->movie_id = $movie_id;
         $this->movie_name = $movie_name;
         $this->getMovieDetails();
-        $sql = "UPDATE movies SET movie_name = ?";
+        $sql = "UPDATE movies 
+                SET movie_name = ? 
+                WHERE movie_id = $movie_id";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("s", $this->movie_name);
+        $stmt->bind_param("si", $this->movie_name, $this->movie_id);
         $stmt->execute();
         if($stmt->affected_rows == 1) {
             $this->upload();
          }
     }
     public function upload() {
-        header("Location: admin.php?edit=success");
+        header("Location: admin.php");
     }
 
     public function Upload_movie() {

@@ -1,6 +1,14 @@
 <?php
 include 'includes/header.php';
+include 'classes/movie.php';
+include 'view.php';
 $errors = [];
+if(isset($_POST['edit'])) {
+    $movie_id = $_GET['id'];
+    $movie_name = $_POST['movie_name'];
+    $movie = new Movie($conn);
+    $movie->updateMovie($movie_name, $movie_id);
+}
 //var_dump($chapter);
 //var_dump($contentInfo);
 //var_dump($contentType);
@@ -33,16 +41,16 @@ $errors = [];
       <div class="mt-3 col-md-6 offset-md-3">
         <h1>Edit here, bitch</h1>
         
-        <form action="editPost.php" method="post" enctype="multipart/form-data">     
-          <label for="chapter">Movie name</label>
-          <input type="text" name="chapter" placeholder="Move name here" value="" class="form-control">
+        <form action="editMovie.php" method="post" enctype="multipart/form-data">     
+          <label for="movie_name">Movie name</label>
+          <input type="text" name="movie_name" placeholder="Move name here" value="" class="form-control">
           <br>
 
-          <label for="content_info">Movie description</label>
-          <textarea name="content_info" class="form-control" placeholder="Movie description" rows="8" cols="80"></textarea>
+          <label for="movie_info">Movie description</label>
+          <textarea name="movie_info" class="form-control" placeholder="Movie description" rows="8" cols="80"></textarea>
           <br>
 
-          <button type="submit" name="create-content" class="btn btn-warning btn-block"> <i class="fas fa-edit"></i> Confirm</button>
+          <button type="submit" name="edit" class="btn btn-warning btn-block"> <i class="fas fa-edit"></i> Confirm</button>
        </form>
       </div>
     

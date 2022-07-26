@@ -1,4 +1,4 @@
-<?php     include 'function/search.php'; ?>
+<?php include 'function/search.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
