@@ -45,6 +45,36 @@ include 'db.php';
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
   </head>
+  <style>
+    .sidebar li {
+    position: relative;
+    margin: 8px 0;
+    list-style: none;
+}
+  .sidebar input {
+  font-size: 15px;
+  color: #FFF;
+  padding: 0 20px 0 50px;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+
+.sidebar .fa-search {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 22px;
+    background: #1d1b31;
+    color: #FFF;
+}
+  </style>
   <body>
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
@@ -103,6 +133,13 @@ include 'db.php';
                   <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
 
                   <ul class="site-menu main-menu js-clone-nav d-none d-lg-block"  style="text-align: end;">
+                  <div class="sidebar">
+                    <!-- <li>
+                        <i class="fas fa-search    "></i>
+                        <input type="text" placeholder="Search...">
+                        <span class="tooltip">Search</span>
+                    </li> -->
+                  </div>
                     <li class="active"><a href="#home-section" class="nav-link">Home</a></li>
                     <li><a href="#classes-section" class="nav-link">Classes</a></li>
                     <li class="has-children">
@@ -126,10 +163,7 @@ include 'db.php';
                 <div class="container">
                   <ul class="site-menu main menu" style="text-align: end;">
                     <li class="nav-item avtive">
-                      <a href="#" class="nav-link">Hello, <?php echo htmlspecialchars($_SESSION['user_name']); ?></a>
-                    </li>
-                    <li class="nav-item active logout">
-                      <a class="nav-link" href="logout.php">Logout</a>
+                      <a href="Profile.php" class="nav-link">Hello, <?php echo htmlspecialchars($_SESSION['user_name']); ?></a>
                     </li>
                   </ul>
                 </div>

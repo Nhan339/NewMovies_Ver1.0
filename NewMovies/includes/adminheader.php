@@ -85,9 +85,7 @@ include 'db.php';
                     <li class="nav-item avtive has-children">
                       <a href="Profile.php" class="nav-link">Hello, <?php echo htmlspecialchars($_SESSION['user_name']); ?></a><i class="fa fa-angle-down" style="color: #7e7e7e;" aria-hidden="true"></i> 
                       <ul class="dropdown arrow-top">
-                        <li><a href="#" class="nav-link">Team</a></li>
-                        <li><a href="#" class="nav-link">Pricing</a></li>
-                        <li><a href="#" class="nav-link">FAQ</a></li>
+                        <li><a  href="logout.php">Logout</a></li>
                       </ul>
                     </li>
                   </ul>
