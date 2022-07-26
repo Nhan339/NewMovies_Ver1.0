@@ -1,16 +1,20 @@
 <?php 
 class Movie {
+    public $movie_id;
     public $movie_name;
+    public $movie_img;
+    public $movie_url;
+    public $movie_details;
+    public $movie_genre;
     public $movie_desc;
-    public $id;
     public $movie = [];
     public function __construct($conn) {
         $this->conn = $conn;
     }
     public function getMovieDetails() {
-        $sql = "SELECT * FROM videos WHERE id = ?";
+        $sql = "SELECT * FROM movies WHERE id = ?";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("i", $this->id);
+        $stmt->bind_param("i", $this->movie_id);
         $stmt->execute();
         $results = $stmt->get_results();
         if($results->num_rows == 1) {
@@ -20,7 +24,7 @@ class Movie {
     public function updateMovie($movie_name) {
         $this->movie_name = $movie_name;
         $this->getMovieDetails();
-        $sql = "UPDATE videos SET video_name = ?";
+        $sql = "UPDATE movies SET movie_name = ?";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("s", $this->movie_name);
         $stmt->execute();
@@ -30,6 +34,44 @@ class Movie {
     }
     public function upload() {
         header("Location: admin.php?edit=success");
+    }
+
+    public function Upload_movie() {
+        if (isset($_POST['submit']) && isset($_FILES['my_video'])) {
+            include "db_conn.php";
+            $video_name = $_FILES['my_video']['name'];
+            $vid_name = $_POST['vname'];
+            $tmp_name = $_FILES['my_video']['tmp_name'];
+            $error = $_FILES['my_video']['error'];
+        
+            if ($error === 0) {
+                $video_ex = pathinfo($video_name, PATHINFO_EXTENSION);
+        
+                $video_ex_lc = strtolower($video_ex);
+        
+                $allowed_exs = array("mp4", 'webm', 'avi', 'flv');
+        
+                if (in_array($video_ex_lc, $allowed_exs)) {
+                    
+                    $video_url = uniqid("video-", true). '.'.$video_ex_lc;
+                    $video_upload_path = 'uploads/'.$video_url;
+                    move_uploaded_file($tmp_name, $video_upload_path);
+        
+                    // Now let's Insert the video path into database
+                    $sql = "INSERT INTO movies(movie_url, movie_name) 
+                           VALUES('$video_url', '$vid_name')";
+                    mysqli_query($conn, $sql);
+                    header("Location: view.php");
+                }else {
+                    $em = "You can't upload files of this type";
+                    header("Location: admin.php?error=$em");
+                }
+            }
+        
+        
+        }else{
+            header("Location: admin.php");
+        }
     }
 }
 ?>

@@ -3,7 +3,7 @@
         $host = "localhost";
         $user = "root";
         $pw = "";
-        $db = "newmovies";
+        $db = "newmovies_db";
         $conn = new mysqli($host, $user, $pw, $db);
          // Phần code PHP xử lý tìm kiếm
          // Nếu người dùng submit form thì thực hiện
@@ -19,7 +19,7 @@
              else
              {
                  // Dùng câu lênh like trong sql và sứ dụng toán tử % của php để tìm kiếm dữ liệu chính xác hơn.
-                 $query = "select * from videos where video_name like '%$search%' OR video_details like '%$search%'";
+                 $query = "select * from movies where movie_name like '%$search%' OR movie_details like '%$search%'";
                 
                  // Thực thi câu truy vấn
                  $sql = mysqli_query($conn, $query);
@@ -34,9 +34,9 @@
  
                          $output .= '
                             
-                                <img src="' . $row['video_img'] . '" class="w-100 h-100"/>
+                                <img src="' . $row['movie_img'] . '" class="w-100 h-100"/>
                             
-                                    <h3 style="font-weight: bold">' . $row['video_name'] . '</h3>
+                                    <h3 style="font-weight: bold">' . $row['movie_name'] . '</h3>
                                     
                               
                          ';
@@ -44,7 +44,7 @@
                     echo $output;
                  } 
                  else {
-                     echo "<h1> No Destination name '$search' </h1>";
+                     echo "<h1> Can not find!!!'$search' </h1>";
                  }
              }
          }

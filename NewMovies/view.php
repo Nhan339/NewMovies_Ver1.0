@@ -45,17 +45,20 @@
 	<div class="alb">
 		<?php 
 		 include "db_conn.php";
-		 $sql = "SELECT * FROM videos ORDER BY id DESC";
+		 $sql = "SELECT * FROM movies ORDER BY movie_id DESC";
 		 $res = mysqli_query($conn, $sql);
 		 if (mysqli_num_rows($res) > 0) {
 		 	while ($video = mysqli_fetch_assoc($res)) { 
 		 ?>
 		 		
-	        <video src="uploads/<?=$video['video_url']?>" controls>
+	        <video src="uploads/<?=$video['movie_url']?>" controls>
 	        	
 	        </video>
-			<?php echo $video['video_name']; ?>
-			<a class="btn btn-outline-light" href="editMovie">Edit <i class="fa-solid fa-pen-to-square"></i></a>
+			<?php echo $video['movie_name']; 
+			echo ("ID: ");
+				echo $video['movie_id'];
+			?>
+			<?php echo "<a class='btn btn-outline-light' href='editMovie.php?id={$video['movie_id']}'>Edit <i class='fa-solid fa-pen-to-square'></i></a>" ?>
 	    <?php 
 	     }
 		 }else {
