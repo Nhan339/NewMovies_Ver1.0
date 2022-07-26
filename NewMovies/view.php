@@ -54,8 +54,12 @@
 	        <video src="uploads/<?=$video['movie_url']?>" controls>
 	        	
 	        </video>
-			<?php echo $video['movie_name']; ?>
-			<a class="btn btn-outline-light" href="editMovie">Edit <i class="fa-solid fa-pen-to-square"></i></a>
+			<?php echo $video['movie_name']; 
+			echo ("ID: ");
+				echo $video['movie_id'];
+			?>
+			
+			<a class="btn btn-outline-light" href="editMovie.php">Edit <i class="fa-solid fa-pen-to-square"></i></a>
 	    <?php 
 	     }
 		 }else {
