@@ -70,7 +70,7 @@ include 'db.php';
               ">
               <a href="Homepage.php">NewMovies</a></h1>
             </div>
-            <div class="col-7">
+            <!-- <div class="col-7">
               <nav class="site-navigation text-right" role="navigation">
                 <div class="container">
                   <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
@@ -91,8 +91,8 @@ include 'db.php';
                   </ul>
                 </div>
               </nav>
-            </div>
-            <div class="col-3">
+            </div> -->
+            <div class="col-10">
               <nav class="site-navigation text-left" role="navigation">
                 <div class="container">
                   <ul class="site-menu main menu" style="text-align: end;">

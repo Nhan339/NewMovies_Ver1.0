@@ -11,6 +11,6 @@ exampleModal.addEventListener('show.mdb.modal', (e) => {
   const modalTitle = exampleModal.querySelector('.modal-title');
   const modalBodyInput = exampleModal.querySelector('.modal-body input');
 
-  modalTitle.textContent = `New message to ${recipient}`;
+  modalTitle.textContent = `Change Imange`;
   modalBodyInput.value = recipient;
 })

@@ -272,7 +272,7 @@ include 'db.php';
     }
     .home-section{
       position: relative;
-      background: rgb(20 20 20);
+      background: rgb(17 16 29);
       min-height: 100vh;
       top: 0;
       left: 78px;

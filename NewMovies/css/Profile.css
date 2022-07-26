@@ -3,10 +3,10 @@ body{
     background-color: #141414;
     position: relative; 
   }
-  img:hover{
-    background-color: white;
-    opacity: 0.2;
-    transition: background-color 2000ms linear;
+  i.fa.fa-camera {
+    position: absolute;
+    top: 19%;
+    left: 45%;
   }
   .container-profile{
     user-select: none;
