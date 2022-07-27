@@ -3,11 +3,9 @@
   include 'classes/comment.php';
   include 'classes/reply.php';
   include 'classes/movie.php';
-    
-  var_dump($_SESSION);
+var_dump($_POST);
   if(isset($_GET['id'])) {
-    $post = getMovie($_GET['movie_id'], $conn);
-    $theid = $_GET['movie_id'];
+    $theid = $_GET['id'];
     $comments = new Comment($theid, $conn);
     $comments->getComments();
     $replies = new Reply($theid, $conn);
@@ -36,15 +34,17 @@
       <?php if ($_SESSION['loggedin']): ?>
       <div class="row comment-form">
         <div class="col-md-8 form">
-          <form class="comment-form" method="POST" action="func/ajaxManager.php">
+          <form class="comment-form" method="POST" action="function/manager.php">
             <textarea name="comment-text" class="form-control" rows="4" cols="80"></textarea>
-            <input type="hidden" name="id" value="id=<?php echo htmlspecialchars($_GET['movie_id']); ?>">
+            <input type="hidden" name="id" value="<?php echo ($_GET['id']); ?>">
             <button type="submit" name="comment-submit" class="comment-submit btn btn-outline-success mt-2"><i class="far fa-comment"></i>Add Comment</button>
           </form>
         </div>
       </div>
+
      <div class="row comments">
            <?php $comments->outputComments($replies);?>
+           
          <?php else: ?>
            <h3>Please login to comment!</h3>
            <a href="login.php"><button type="button" class="btn btn-primary btn-lg">Login</button></a>
@@ -117,6 +117,10 @@
 </div>
 
 
-<?php 
-  include 'includes/footer.php';
-?>
+<?php
+ $queryIDCount = count($_SESSION['query_history']) -2;
+ $queryStrPos = strpos($_SESSION['query_history'][$queryIDCount],"id");
+ $queryId = substr($_SESSION['query_history'][$queryIDCount],$queryStrPos);
+ $queryId = explode("=", $queryId);
+ include 'includes/footer.php';
+  ?>

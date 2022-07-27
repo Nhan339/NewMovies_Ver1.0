@@ -18,9 +18,23 @@
                     <p>
                     <span>
                         <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark">Add to play-list</button>
-                        <a href="Watchmovie.php">
-                        <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Watch Now</button>
-                        </a> 
+                        <div class="alb">
+                            <?php 
+                            include "db_conn.php";
+                            $sql = "SELECT * FROM movies ORDER BY movie_id DESC";
+                            $res = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($res) > 0) {
+                                while ($video = mysqli_fetch_assoc($res)) { 
+                            ?>
+                                 
+                                <?php echo "<a class='btn btn-outline-light' href='Watchmovie.php?id={$video['movie_id']}'>Edit <i class='fa-solid fa-pen-to-square'></i></a>" ?>
+                            <?php 
+                            }
+                            }else {
+                                echo "<h1>Empty</h1>";
+                            }
+                            ?>
+                        </div>
                     </span>
                     </p>
                 </div>

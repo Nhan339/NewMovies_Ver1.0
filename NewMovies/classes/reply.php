@@ -36,7 +36,7 @@ class Reply extends Comment {
   }
 
   public function getReplies() {
-    $sql = "SELECT c.ID as CID, c.comment_text, c.comment_post, c.date_created, u1.username, c.comment_user AS UID, c.comment_parent, u2.username AS response_to_user FROM comments c JOIN users u1 ON u1.id = c.comment_user JOIN users u2 ON u2.id = c.reply_to_user WHERE c.comment_post = ? AND c.comment_parent IS NOT NULL ORDER BY c.date_created ASC";
+    $sql = "SELECT c.ID as CID, c.comment_text, c.comment_post, c.date_created, u1.user_name, c.comment_user AS UID, c.comment_parent, u2.user_name AS response_to_user FROM comments c JOIN users u1 ON u1.ID = c.comment_user JOIN users u2 ON u2.ID = c.reply_to_user WHERE c.comment_post = ? AND c.comment_parent IS NOT NULL ORDER BY c.date_created ASC";
     $stmt = $this->conn->prepare($sql);
     $stmt->bind_param("i", $this->post_id);
     $stmt->execute();

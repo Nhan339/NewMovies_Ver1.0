@@ -3,7 +3,6 @@ include 'includes/header.php';
 include 'classes/movie.php';
 include 'view.php';
 $errors = [];
-var_dump($_GET['id']);
 if(isset($_POST['edit'])) {
     $movie_id = $_GET['id'];
     $movie_name = $_POST['movie_name'];
