@@ -11,7 +11,7 @@
                     <h1>Thỏ bay màu</h1>
                     <h3>
                     <span>
-                    2022 ‧ Action/Adventure
+                    2022 ‧ Action/Adventures
                     </span>
                     </h3>
                     <br>
