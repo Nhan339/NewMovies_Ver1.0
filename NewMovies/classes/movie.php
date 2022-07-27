@@ -11,8 +11,19 @@ class Movie {
     public function __construct($conn) {
         $this->conn = $conn;
     }
+
+    function getMovie($movie_id, $conn) {
+        $sql = "SELECT * FROM movies WHERE movie_id = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $this->movie_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if($result->num_rows == 1) {
+          return $result->fetch_assoc();
+        }
+      }
     public function getMovieDetails() {
-        $sql = "SELECT * FROM movies WHERE id = ?";
+        $sql = "SELECT * FROM movies WHERE movie_id = ?";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("i", $this->movie_id);
         $stmt->execute();
