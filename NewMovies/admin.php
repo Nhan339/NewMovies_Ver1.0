@@ -348,13 +348,83 @@ include 'db.php';
         </a>
         <span class="tooltip">Files</span>
       </li>
+
+      <!-- old upload -->
       <li>
         <a href="upload.php">
           <i class='bx bx-folder' ></i>
           <span class="links_name">Upload Movie</span>
         </a>
         <span class="tooltip">Files</span>
-      </li>
+      </li> 
+
+      <!-- new upload -->
+      <!-- ------------------------------------form upload------------------------------------ -->
+      <!-- <li>
+        <a href="upload2.php">
+          <i class='bx bx-folder' ></i>
+          <span class="links_name">Upload Movie</span>
+        </a>
+        <button
+          type="button"
+          class='bx bx-folder'
+          data-mdb-toggle="modal"
+          data-mdb-target="#exampleModal"
+          data-mdb-whatever="@mdo"
+        > Add NewMovies</button>
+        
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        Thay doi form
+      <div class="modal-body">
+        <form>
+        Name
+        <div class="mb-3">
+            <label for="Movie-name" class="col-form-label">Movie Name</label>
+            <input type="text" class="form-control" id="movie-name" />
+        </div>
+        Description
+        <div class="mb-3">
+            <label for="Movie-Description" class="col-form-label">Movie Description:</label>
+            <textarea class="form-control" id="movie-description"></textarea>
+        </div>
+        Up Image
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Choose Image For Movie</label>
+            <input class="form-control" type="file" id="movie-image">
+        </div>
+        Up Video
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Choose Video For Movie</label>
+             <input class="form-control" type="file" id="movie-video">
+        </div>          
+
+        </form>
+      </div>
+      Thay doi form
+
+
+      <div class="modal-footer">        
+        <button class="upload_btn" type="button" class="btn btn-primary">Add New Movie</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+        <span class="tooltip">Files</span>
+      </li> -->
+
+      <!-- ------------------------------------form upload------------------------------------ -->
+
+
       <li class="profile">
           <div class="profile-details">
             <!--<img src="profile.jpg" alt="profileImg">-->
@@ -648,6 +718,7 @@ include 'db.php';
     <!-- Read more -->
     <script type="text/javascript" src="js/watch.js"></script>
     <script type="text/javascript" src="js/edit.js"></script>
+    <script src="js/view.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 
