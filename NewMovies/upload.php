@@ -47,12 +47,22 @@
 	       method="post"
 	       enctype="multipart/form-data">
 
-		<input type="text"
-	 	       name="vname">
-	 	<input type="file"
-	 	       name="my_video">
-
-
+		<div class="m-3">
+			<label for="vname" class="col-form-label">Movie Name</label>
+			<input type="text" name="vname">
+		</div>
+		<div class="m-3">
+			<label for="movie-details" class="col-form-label">Movie Details</label>
+			<textarea class="form-control" name="movie_details"></textarea>
+		</div>
+		<div class="m-3">
+			<label for="Movie-url" class="col-form-label">Movie file</label>
+			<input type="file" name="my_video">
+		</div>
+		<div class="m-3">
+			<label for="Movie-img" class="col-form-label">Movie Image</label>
+			<input type="file" name="movie_img">
+		</div>
 	 	<input type="submit"
 	 	       name="submit" 
 	 	       value="Upload">

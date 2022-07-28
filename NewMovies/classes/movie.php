@@ -57,7 +57,16 @@ class Movie {
             $vid_name = $_POST['vname'];
             $tmp_name = $_FILES['my_video']['tmp_name'];
             $error = $_FILES['my_video']['error'];
-        
+
+            $movie_img_name = $_FILES['movie_img']['name'];
+            $movie_details = $_POST['movie_details'];
+            
+            $img_ex = pathinfo($movie_img_name, PATHINFO_EXTENSION);
+            $img_ex_lc = strtolower($img_ex);
+
+            $movie_img = uniqid("image-", true). '.'.$img_ex_lc;
+
+
             if ($error === 0) {
                 $video_ex = pathinfo($video_name, PATHINFO_EXTENSION);
         
@@ -72,8 +81,8 @@ class Movie {
                     move_uploaded_file($tmp_name, $video_upload_path);
         
                     // Now let's Insert the video path into database
-                    $sql = "INSERT INTO movies(movie_url, movie_name) 
-                           VALUES('$video_url', '$vid_name')";
+                    $sql = "INSERT INTO movies(movie_url, movie_name, movie_img, movie_details) 
+                           VALUES('$video_url', '$vid_name', '$movie_img', '$movie_details')";
                     mysqli_query($conn, $sql);
                     header("Location: view.php");
                 }else {
