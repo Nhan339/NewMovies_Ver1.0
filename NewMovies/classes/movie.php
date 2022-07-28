@@ -57,12 +57,16 @@ class Movie {
             $vid_name = $_POST['vname'];
             $tmp_name = $_FILES['my_video']['tmp_name'];
             $error = $_FILES['my_video']['error'];
+            
+            $movie_details = $_POST['movie_details'];
 
             $movie_img_name = $_FILES['movie_img']['name'];
-            $movie_details = $_POST['movie_details'];
+            $img_tmp_name = $_FILES['movie_img']['tmp_name'];
+            
             
             $movie_img = "images/". '' .$movie_img_name;
-
+            $img_upload_path = 'images/'.$movie_img_name;
+            move_uploaded_file($img_tmp_name, $img_upload_path);
 
             if ($error === 0) {
                 $video_ex = pathinfo($video_name, PATHINFO_EXTENSION);
