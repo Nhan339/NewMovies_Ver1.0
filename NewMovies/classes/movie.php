@@ -61,10 +61,7 @@ class Movie {
             $movie_img_name = $_FILES['movie_img']['name'];
             $movie_details = $_POST['movie_details'];
             
-            $img_ex = pathinfo($movie_img_name, PATHINFO_EXTENSION);
-            $img_ex_lc = strtolower($img_ex);
-
-            $movie_img = uniqid("image-", true). '.'.$img_ex_lc;
+            $movie_img = "images/". '' .$movie_img_name;
 
 
             if ($error === 0) {

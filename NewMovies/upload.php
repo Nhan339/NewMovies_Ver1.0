@@ -2,6 +2,7 @@
   session_start();
   include 'classes/movie.php';
   include "db_conn.php";
+  var_dump($_FILES);
   if(isset($_POST['submit']) && isset($_FILES['my_video'])) {
 	$video_name = $_FILES['my_video']['name'];
 	$vid_name = $_POST['vname'];
@@ -43,7 +44,7 @@
 	<?php } ?>
 
 	
-	 <form action="upload.php"
+	 <form action="#"
 	       method="post"
 	       enctype="multipart/form-data">
 
