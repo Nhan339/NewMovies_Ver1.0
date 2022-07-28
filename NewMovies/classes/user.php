@@ -4,6 +4,7 @@ class User {
     public $user_name;
     public $user_email;
     public $user_role;
+    public $profile_img;
     public $conn;
     public $user_password1;
     public $user_password2;
@@ -73,7 +74,22 @@ class User {
         $this->login();
      }
     }
-
+    public function editProfile($profile_img) {
+      $this->profile_img = $profile_img;
+      $this->user_name = $_SESSION['user_name'];
+      //var_dump($this->user_name);
+      //var_dump($this->profile_img);
+      $sql = "UPDATE users 
+              SET profile_img = ? 
+              WHERE user_name = $this->user_name";
+      $stmt = $this->conn->prepare($sql);
+      $stmt->bind_param("s", $this->profile_img);  
+      $stmt->execute();
+      if($stmt->affected_rows == 1) {
+        $this->getUsername();
+        $this->pic();
+      }
+    }
     public function checkNewUser($user_name, $user_email, $user_password1, $user_password2) {
         $this->user_name = $user_name;
         $this->user_email = $user_email;
@@ -116,6 +132,9 @@ class User {
       } else {
         header("Location: Homepage.php?login=success");
       }
+    }
+    public function pic() {
+      $_SESSION['profile'] = $this->users['profile_img'];
     }
     public static function logout() {
       $_SESSION = [];

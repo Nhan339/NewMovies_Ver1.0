@@ -1,5 +1,16 @@
 <?php 
   include 'includes/adminheader.php';
+  include 'classes/user.php';
+  include 'db.php';
+  if(isset($_POST['update'])) {
+    $user_img = $_POST['profile_pic'];
+    $profile = new User($conn);
+    $profile->editProfile($user_img);
+  }
+  //var_dump($_POST['update']);
+  //var_dump($_POST['profile_pic']);
+  //var_dump($user_img);
+  //var_dump($_SESSION['user_name']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,10 +46,10 @@
       </div>
       <div>
       <!-- data-mdb-toggle="tooltip" title="Edit the picture" data-mdb-placement="bottom" -->
-        <button type="button" class="btn1" data-mdb-toggle="modal" data-mdb-target="#exampleModal"
-        data-mdb-whatever="@fat" ><i class="fa fa-camera" aria-hidden="true"></i></button>
+        <button type="submit" class="btn1" data-mdb-toggle="modal" data-mdb-target="#exampleModal"
+        data-mdb-whatever="@fat"><i class="fa fa-camera" aria-hidden="true"></i></button>
       </div>
-      <div class="profile-name">Beni Smith</div>
+      <div class="profile-name"><?php echo htmlspecialchars($_SESSION['user_name']) ?></div>
       <p class="about">User Interface Designer and<br>front-end developer</p>
       <button class="follow-btn">Update</button>
     </div>
@@ -52,16 +63,16 @@
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form action="Profile.php" method="post">
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label">Image:</label>
-              <input type="file" class="form-control" id="recipient-name" />
+              <input type="file" class="form-control" id="recipient-name" name="profile_pic" value="">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" name="update">Update</button>
             </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Update</button>
         </div>
       </div>
     </div>
