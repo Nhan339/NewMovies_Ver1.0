@@ -1,5 +1,7 @@
 <?php 
   include 'includes/adminheader.php';
+  include 'classes/user.php';
+  //var_dump($_SESSION['user_name']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,7 +40,7 @@
         <button type="button" class="btn1" data-mdb-toggle="modal" data-mdb-target="#exampleModal"
         data-mdb-whatever="@fat" ><i class="fa fa-camera" aria-hidden="true"></i></button>
       </div>
-      <div class="profile-name">Beni Smith</div>
+      <div class="profile-name"><?php echo htmlspecialchars($_SESSION['user_name']) ?></div>
       <p class="about">User Interface Designer and<br>front-end developer</p>
       <button class="follow-btn">Update</button>
     </div>
