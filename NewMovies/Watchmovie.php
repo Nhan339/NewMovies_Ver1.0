@@ -3,7 +3,6 @@
   include 'classes/comment.php';
   include 'classes/reply.php';
   include 'classes/movie.php';
-var_dump($_POST);
   if(isset($_GET['id'])) {
     $theid = $_GET['id'];
     $comments = new Comment($theid, $conn);
@@ -24,16 +23,19 @@ var_dump($_POST);
     <p style="padding-left: 10px">bla bla bla bla bla bla bla bla bla bla</p>
     <span></span>
     <div class="space" style="padding-top: 5rem;">
+    </div>
 </div>
 <!-- End of watch movie -->
 
 <!-- Comments -->
 <hr>
+    <div class="container">
       <h3 class="display-4 mt-3 mb-3">Comments</h3>
       <hr>
       <?php if ($_SESSION['loggedin']): ?>
-      <div class="row comment-form">
-        <div class="col-md-8 form">
+    
+      <div class="comment-form">
+        <div class="form">
           <form class="comment-form" method="POST" action="function/manager.php">
             <textarea name="comment-text" class="form-control" rows="4" cols="80"></textarea>
             <input type="hidden" name="id" value="<?php echo ($_GET['id']); ?>">
@@ -42,13 +44,16 @@ var_dump($_POST);
         </div>
       </div>
 
-     <div class="row comments">
-           <?php $comments->outputComments($replies);?>
-           
-         <?php else: ?>
-           <h3>Please login to comment!</h3>
-           <a href="login.php"><button type="button" class="btn btn-primary btn-lg">Login</button></a>
-         <?php endif; ?>
+    </div>
+    <div class="container">
+        <div class="comments">
+            <?php $comments->outputComments($replies);?>
+            
+            <?php else: ?>
+            <h3>Please login to comment!</h3>
+            <a href="login.php"><button type="button" class="btn btn-primary btn-lg">Login</button></a>
+            <?php endif; ?>
+        </div>
      </div>
 
 
@@ -114,11 +119,10 @@ var_dump($_POST);
             </div>
         </div>
 </div>
-</div>
 
 
 <?php
- $queryIDCount = count($_SESSION['query_history']) -2;
+ $queryIDCount = count($_SESSION['query_history']) - 2;
  $queryStrPos = strpos($_SESSION['query_history'][$queryIDCount],"id");
  $queryId = substr($_SESSION['query_history'][$queryIDCount],$queryStrPos);
  $queryId = explode("=", $queryId);
