@@ -4,6 +4,7 @@ if (!isset($_SESSION['loggedin'])) {
   $_SESSION['loggedin'] = false;
 }
 include 'db.php';
+//var_dump($_SESSION['user_role']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,6 +166,11 @@ include 'db.php';
                     <li class="nav-item avtive">
                       <a href="Profile.php" class="nav-link">Hello, <?php echo htmlspecialchars($_SESSION['user_name']); ?></a>
                     </li>
+                    <?php if ($_SESSION['user_role'] == 1) : ?>
+                      <li class="nav-item">
+                        <a href="admin.php" class="nav-link">Admin</a>
+                      </li>
+                    <?php endif; ?>
                   </ul>
                 </div>
               </nav>

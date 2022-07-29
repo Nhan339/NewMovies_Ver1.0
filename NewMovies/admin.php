@@ -335,7 +335,7 @@ include 'db.php';
       </div>
       <ul class="nav-list">
         <li>
-        <a href="#">
+        <a href="Homepage.php">
           <i class='bx bx-folder' ></i>
           <span class="links_name">Home</span>
         </a>
