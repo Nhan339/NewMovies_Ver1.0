@@ -74,14 +74,13 @@ class User {
         $this->login();
      }
     }
-    public function editProfile($profile_img) {
+    public function editProfile($profile_img, $user_name) {
       $this->profile_img = $profile_img;
-      $this->user_name = $_SESSION['user_name'];
       //var_dump($this->user_name);
-      //var_dump($this->profile_img);
+      var_dump($this->profile_img);
       $sql = "UPDATE users 
-              SET profile_img = ? 
-              WHERE user_name = $this->user_name";
+              SET profile_img = ?
+              WHERE user_name = $user_name";
       $stmt = $this->conn->prepare($sql);
       $stmt->bind_param("s", $this->profile_img);  
       $stmt->execute();

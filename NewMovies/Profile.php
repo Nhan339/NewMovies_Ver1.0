@@ -3,10 +3,16 @@
   include 'classes/user.php';
   include 'db.php';
   if(isset($_POST['update'])) {
-    $user_img = $_POST['profile_pic'];
+    $user_img = $_FILES['profile_pic']['name'];
+    $img_temp = $_FILES['profile_pic']['tmp_name'];
+    $profile_img = "images/".''.$user_img;
+    $profile_img_path = "images/".$user_img;
+    move_uploaded_file($img_temp, $profile_img_path);
     $profile = new User($conn);
-    $profile->editProfile($user_img);
+    $username = $_SESSION['user_name'];
+    $profile->editProfile($profile_img, $username);
   }
+  var_dump($_FILES);
   //var_dump($_POST['update']);
   //var_dump($_POST['profile_pic']);
   //var_dump($user_img);
@@ -63,7 +69,7 @@
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="Profile.php" method="post">
+          <form action="Profile.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label">Image:</label>
               <input type="file" class="form-control" id="recipient-name" name="profile_pic" value="">
