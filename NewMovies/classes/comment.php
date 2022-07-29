@@ -55,25 +55,26 @@ class Comment {
     
     foreach ($this->comments as $comment) {
     echo "<div class='comment-wrapper col-md-12'>
-      <div class='col-md-8 mt-2 mb-2 comment'>
-      <div class='card'>
-        <div class='card-header'>
-        <a href='profile.php?id={$comment['UID']}' class='comment-user-id' data-comment-user-id='{$comment['UID']}'>
-          {$comment['user_name']}</a>| {$comment['date_created']}
+      <div class='mt-2 mb-2 comment'>
+        <div class='card'>
+          <div class='card-header'>
+          <a href='profile.php?id={$comment['UID']}' class='comment-user-id' data-comment-user-id='{$comment['UID']}'>
+            {$comment['user_name']}</a> | {$comment['date_created']}
 
-          <form class='comment-form' method='POST' action='function/manager.php'>
-          <button name='delete-comment' class='btn btn-outline-danger btn-sm  float-right delete-post' data-comment-id={$comment['CID']} >X</button>
-          <input type='hidden' name='comment_id' value='{$comment['CID']}'; ?>
-          <input type='hidden' name='movie_id' value='{$comment['comment_post']}'; ?>
-           <button class='btn float-right btn-sm btn-outline-secondary mr-2 reply-comment' data-comment-id='{$comment['CID']}' data-comment-user-id='{$comment['UID']}'>reply</button>
-           </form>
-           </div>
+              <form class='comment-form' method='POST' action='function/manager.php'>
+                <button name='delete-comment' class='btn btn-outline-danger btn-sm  float-right delete-post' data-comment-id={$comment['CID']} >X</button>
+                <input type='hidden' name='comment_id' value='{$comment['CID']}'; ?>
+                <input type='hidden' name='movie_id' value='{$comment['comment_post']}'; ?>
+                <button class='btn float-right btn-sm btn-outline-secondary mr-2 reply-comment' name='reply-comment' data-comment-id='{$comment['CID']}' data-comment-user-id='{$comment['UID']}'>reply</button>
+              </form>
+            </div>
 
-          <div class='card-body'>
-            <p class='card-text comment-p'>{$comment['comment_text']} </p>
+            <div class='card-body'>
+              <p class='card-text comment-p'>{$comment['comment_text']} </p>
+            </div>
           </div>
-        </div>
-      </div> </div>";
+        </div> 
+      </div>";
 
       $replies->outputReplies($comment['CID']);
     }

@@ -42,6 +42,17 @@
         </div>
     </section>
 
+	<div class="wrapper">
+                <?php 
+					include "classes/movie.php";
+					include "db_conn.php";
+					
+                    $movies = new Movie($conn);
+                    $movies->output();
+					
+                 ?>            
+    </div>
+
 	<div class="alb">
 		<?php 
 		 include "db_conn.php";

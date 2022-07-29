@@ -3,52 +3,66 @@
   include 'classes/comment.php';
   include 'classes/reply.php';
   include 'classes/movie.php';
-var_dump($_POST);
   if(isset($_GET['id'])) {
     $theid = $_GET['id'];
+    $movie_id = $theid;
     $comments = new Comment($theid, $conn);
     $comments->getComments();
     $replies = new Reply($theid, $conn);
     $replies->getReplies();
+    
   }
 ?>
 <link rel="stylesheet" href="css/watch.css">
 
+<div class="space" style="padding-top: 8rem;"></div>
 <!-- Watch movie -->
 <div class="watch">
-<video autoplay muted loop id="myVideo">
-        <source src="images/Marvel Studios' Thor_ Love and Thunder - Teaser Trailer (2022) Chris Hemsworth, Natalie Portman.mp4" type="video/mp4">
-</video>
-    <h1 style=" padding-left: 10px">Thor and Thunder</h1>
-    <h2 style="padding-left: 10px">Tóm tắt</h1>
-    <p style="padding-left: 10px">bla bla bla bla bla bla bla bla bla bla</p>
-    <span></span>
-    <div class="space" style="padding-top: 5rem;">
+  <?php 
+    $output = '';
+     $query = "SELECT * FROM movies WHERE movie_id = $movie_id";
+     $sql = mysqli_query($conn, $query);
+     $row = mysqli_fetch_assoc($sql);
+     $output .= '
+     <a href="Moviedetail.php?id='. $row['movie_id'] .'">
+         <img src="' . $row['movie_img'] . '" />
+     </a>
+    ';
+  ?>
+    <video loop id="myVideo"
+        src="uploads/<?=$row['movie_url']?>" controls type="video/mp4">
+    </video>
+
 </div>
 <!-- End of watch movie -->
 
 <!-- Comments -->
 <hr>
+    <div class="container">
       <h3 class="display-4 mt-3 mb-3">Comments</h3>
       <hr>
       <?php if ($_SESSION['loggedin']): ?>
-      <div class="row comment-form">
-        <div class="col-md-8 form">
+    
+      <div class="comment-form">
+        <div class="form">
           <form class="comment-form" method="POST" action="function/manager.php">
             <textarea name="comment-text" class="form-control" rows="4" cols="80"></textarea>
             <input type="hidden" name="id" value="<?php echo ($_GET['id']); ?>">
-            <button type="submit" name="comment-submit" class="comment-submit btn btn-outline-success mt-2"><i class="far fa-comment"></i>Add Comment</button>
+            <button type="submit" name="comment-submit" class="comment-submit btn btn-warning mt-2"><i class="far fa-comment"></i>Add Comment</button>
           </form>
         </div>
       </div>
 
-     <div class="row comments">
-           <?php $comments->outputComments($replies);?>
-           
-         <?php else: ?>
-           <h3>Please login to comment!</h3>
-           <a href="login.php"><button type="button" class="btn btn-primary btn-lg">Login</button></a>
-         <?php endif; ?>
+    </div>
+    <div class="container">
+        <div class="comments">
+            <?php $comments->outputComments($replies);?>
+            
+            <?php else: ?>
+            <h3>Please login to comment!</h3>
+            <a href="login.php"><button type="button" class="btn btn-primary btn-lg">Login</button></a>
+            <?php endif; ?>
+        </div>
      </div>
 
 
@@ -114,11 +128,10 @@ var_dump($_POST);
             </div>
         </div>
 </div>
-</div>
 
 
 <?php
- $queryIDCount = count($_SESSION['query_history']) -2;
+ $queryIDCount = count($_SESSION['query_history']) - 2;
  $queryStrPos = strpos($_SESSION['query_history'][$queryIDCount],"id");
  $queryId = substr($_SESSION['query_history'][$queryIDCount],$queryStrPos);
  $queryId = explode("=", $queryId);

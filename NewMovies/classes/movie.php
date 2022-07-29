@@ -8,6 +8,7 @@ class Movie {
     public $movie_genre;
     public $movie_desc;
     public $movie = [];
+    public $movies = [];
     public function __construct($conn) {
         $this->conn = $conn;
     }
@@ -97,5 +98,35 @@ class Movie {
             header("Location: admin.php");
         }
     }
+
+    public function getMovies() {
+        $sql = "SELECT * FROM movies WHERE movie_id = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $this->movie_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $this->movies = $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function output() {
+        $host = "localhost";
+        $user = "root";
+        $pw = "";
+        $db = "newmovies_db";
+        $conn = new mysqli($host, $user, $pw, $db);
+        $output = '';
+        $query = "SELECT * FROM movies";
+        $sql = mysqli_query($conn, $query);
+        while ($row = mysqli_fetch_assoc($sql)) {
+            $output .= '
+               <a href="Moviedetail.php?id='. $row['movie_id'] .'">
+                   <img src="' . $row['movie_img'] . '" />
+               </a>
+              
+            ';
+          }
+          echo $output;
+    }
+    
 }
 ?>
