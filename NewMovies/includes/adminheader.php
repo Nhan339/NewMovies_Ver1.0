@@ -3,11 +3,10 @@ session_start();
 if (!isset($_SESSION['loggedin'])) {
   $_SESSION['loggedin'] = false;
 }
-include 'db.php';
-?>
+include 'db.php';?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -44,8 +43,7 @@ include 'db.php';
 
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
+</head>
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
@@ -54,7 +52,6 @@ include 'db.php';
       </div>
       <div class="site-mobile-menu-body"></div>
     </div> <!-- .site-mobile-menu -->
-    
     <div class="site-navbar-wrap">
       <div class="site-navbar site-navbar-target js-sticky-header">
         <div class="container">
@@ -70,28 +67,6 @@ include 'db.php';
               ">
               <a href="Homepage.php">NewMovies</a></h1>
             </div>
-            <!-- <div class="col-7">
-              <nav class="site-navigation text-right" role="navigation">
-                <div class="container">
-                  <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
-
-                  <ul class="site-menu main-menu js-clone-nav d-none d-lg-block"  style="text-align: end;">
-                    <li class="active"><a href="#home-section" class="nav-link">Home</a></li>
-                    <li><a href="#classes-section" class="nav-link">Classes</a></li>
-                    <li class="has-children">
-                      <a href="#" class="nav-link">Pages</a><i class="fa fa-angle-down" style="color: #7e7e7e;" aria-hidden="true"></i> 
-                      <ul class="dropdown arrow-top">
-                        <li><a  href="logout.php">Logout</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#about-section" class="nav-link">About</a></li>
-                    <li><a href="#events-section" class="nav-link">Events</a></li>
-                    <li><a href="#gallery-section" class="nav-link">Gallery</a></li>
-                    <li><a href="#contact-section" class="nav-link">Contact</a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div> -->
             <div class="col-10">
               <nav class="site-navigation text-left" role="navigation">
                 <div class="container">
