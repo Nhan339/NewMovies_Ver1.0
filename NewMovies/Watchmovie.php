@@ -5,25 +5,34 @@
   include 'classes/movie.php';
   if(isset($_GET['id'])) {
     $theid = $_GET['id'];
+    $movie_id = $theid;
     $comments = new Comment($theid, $conn);
     $comments->getComments();
     $replies = new Reply($theid, $conn);
     $replies->getReplies();
+    
   }
 ?>
 <link rel="stylesheet" href="css/watch.css">
 
+<div class="space" style="padding-top: 8rem;"></div>
 <!-- Watch movie -->
 <div class="watch">
-<video autoplay muted loop id="myVideo">
-        <source src="images/Marvel Studios' Thor_ Love and Thunder - Teaser Trailer (2022) Chris Hemsworth, Natalie Portman.mp4" type="video/mp4">
-</video>
-    <h1 style=" padding-left: 10px">Thor and Thunder</h1>
-    <h2 style="padding-left: 10px">Tóm tắt</h1>
-    <p style="padding-left: 10px">bla bla bla bla bla bla bla bla bla bla</p>
-    <span></span>
-    <div class="space" style="padding-top: 5rem;">
-    </div>
+  <?php 
+    $output = '';
+     $query = "SELECT * FROM movies WHERE movie_id = $movie_id";
+     $sql = mysqli_query($conn, $query);
+     $row = mysqli_fetch_assoc($sql);
+     $output .= '
+     <a href="Moviedetail.php?id='. $row['movie_id'] .'">
+         <img src="' . $row['movie_img'] . '" />
+     </a>
+    ';
+  ?>
+    <video loop id="myVideo"
+        src="uploads/<?=$row['movie_url']?>" controls type="video/mp4">
+    </video>
+
 </div>
 <!-- End of watch movie -->
 
