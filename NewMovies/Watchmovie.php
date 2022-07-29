@@ -39,7 +39,7 @@
           <form class="comment-form" method="POST" action="function/manager.php">
             <textarea name="comment-text" class="form-control" rows="4" cols="80"></textarea>
             <input type="hidden" name="id" value="<?php echo ($_GET['id']); ?>">
-            <button type="submit" name="comment-submit" class="comment-submit btn btn-outline-success mt-2"><i class="far fa-comment"></i>Add Comment</button>
+            <button type="submit" name="comment-submit" class="comment-submit btn btn-warning mt-2"><i class="far fa-comment"></i>Add Comment</button>
           </form>
         </div>
       </div>
