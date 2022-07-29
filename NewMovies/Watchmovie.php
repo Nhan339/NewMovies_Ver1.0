@@ -136,4 +136,4 @@
  $queryId = substr($_SESSION['query_history'][$queryIDCount],$queryStrPos);
  $queryId = explode("=", $queryId);
  include 'includes/footer.php';
-  ?>
+?>

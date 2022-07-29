@@ -9,10 +9,10 @@
     $profile_img_path = "images/".$user_img;
     move_uploaded_file($img_temp, $profile_img_path);
     $profile = new User($conn);
-    $username = $_SESSION['user_name'];
-    $profile->editProfile($profile_img, $username);
+    $user_id = $_SESSION['user_id'];
+    $profile->editProfile($profile_img, $user_id);
   }
-  var_dump($_FILES);
+  // var_dump($_FILES);
   //var_dump($_POST['update']);
   //var_dump($_POST['profile_pic']);
   //var_dump($user_img);
@@ -48,7 +48,18 @@
 </Style>
     <div class="container-profile">
       <div class="cover-photo">
-        <img id="image" src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="profile">
+        <?php     
+          $output = '';
+          $user_id = $_SESSION['user_id'];
+          $query = "SELECT * FROM users WHERE ID = $user_id";
+          $sql = mysqli_query($conn, $query);
+          $row = mysqli_fetch_assoc($sql);
+          $output .= '
+          <img id="image" src="'.$row['profile_img'].'" class="profile">
+          ';
+          echo $output;
+     ?>
+      <!-- <img id="image" src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="profile"> -->
       </div>
       <div>
       <!-- data-mdb-toggle="tooltip" title="Edit the picture" data-mdb-placement="bottom" -->
