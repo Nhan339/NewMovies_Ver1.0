@@ -119,10 +119,60 @@ class Movie {
         $sql = mysqli_query($conn, $query);
         while ($row = mysqli_fetch_assoc($sql)) {
             $output .= '
-               <a href="Moviedetail.php?id='. $row['movie_id'] .'">
-                   <img src="' . $row['movie_img'] . '" />
-               </a>
+                    <div class="col-md-3">
+                          <div class="card">
+                                  <a href="Moviedetail.php?id='. $row['movie_id'] .'">
+                                    <img src="' . $row['movie_img'] . '" />
+                                  </a>
+                                  <div class="card-title">
+                                    <h1>'. $row['movie_name'] .'</h1>
+                                  </div>
+                                  <h3>
+                                  <span>
+                                  2022 ‧ Action/Adventure
+                                  </span>
+                                  </h3>
+                                  <br>
+                                  <p>
+                                  <span>
+                                      <div class="row">
+                                          <div class="col-md-6"> <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark"><a href="editMovie.php"> Edit</a> <i class="fa-solid fa-pen-to-square"></i></button></div>
+                                          <div class="col-md-6"> <a href="Watchmovie.php">
+                                          <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Delete <i class="fa fa-trash" aria-hidden="true"></i></button>
+                                          </a></div>
+                                      </div>
+                                  </span>
+                                  </p>
+                          </div>
+                      </div>
+            ';
+          }
+          echo $output;
+    }
+
+    public function displayMovie() {
+        $host = "localhost";
+        $user = "root";
+        $pw = "";
+        $db = "newmovies_db";
+        $conn = new mysqli($host, $user, $pw, $db);
+        $output = '';
+        $query = "SELECT * FROM movies";
+        $sql = mysqli_query($conn, $query);
+        
+        while ($row = mysqli_fetch_assoc($sql)) {
+            $output .= '
               
+                 
+          
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                        <a href="Moviedetail.php?id='. $row['movie_id'] .'">
+                            <img src="' . $row['movie_img'] . '"/>
+                        </a>   
+                        </div>
+                    </div>
+     
             ';
           }
           echo $output;
