@@ -59,7 +59,6 @@
           ';
           echo $output;
      ?>
-      <!-- <img id="image" src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="profile"> -->
       </div>
       <div>
       <!-- data-mdb-toggle="tooltip" title="Edit the picture" data-mdb-placement="bottom" -->
@@ -68,7 +67,8 @@
       </div>
       <div class="profile-name"><?php echo htmlspecialchars($_SESSION['user_name']) ?></div>
       <p class="about">User Interface Designer and<br>front-end developer</p>
-      <button class="follow-btn">Update</button>
+      <button class="follow-btn" data-mdb-toggle="modal" data-mdb-target="#updateModal"
+        data-mdb-whatever="@fat">Update</button>
     </div>
 
     <!-- Modal -->
@@ -84,6 +84,34 @@
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label">Image:</label>
               <input type="file" class="form-control" id="recipient-name" name="profile_pic" value="">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" name="update">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>    
+
+  <!-- update modal -->
+  <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Profile</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="Profile.php" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Name:</label>
+              <input type="text" class="form-control" id="recipient-name" name="profile_pic" value="">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Description:</label>
+              <input type="text" class="form-control" id="recipient-name" name="profile_pic" value="">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
