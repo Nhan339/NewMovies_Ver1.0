@@ -127,6 +127,34 @@ class Movie {
           }
           echo $output;
     }
+
+    public function displayMovie() {
+        $host = "localhost";
+        $user = "root";
+        $pw = "";
+        $db = "newmovies_db";
+        $conn = new mysqli($host, $user, $pw, $db);
+        $output = '';
+        $query = "SELECT * FROM movies";
+        $sql = mysqli_query($conn, $query);
+        
+        while ($row = mysqli_fetch_assoc($sql)) {
+            $output .= '
+              
+                 
+          
+                    <div class="item">
+                        <div class="card border-0 shadow">
+                        <a href="Moviedetail.php?id='. $row['movie_id'] .'">
+                            <img src="' . $row['movie_img'] . '"/>
+                        </a>   
+                        </div>
+                    </div>
+     
+            ';
+          }
+          echo $output;
+    }
     
 }
 ?>
