@@ -4,6 +4,8 @@ if (!isset($_SESSION['loggedin'])) {
   $_SESSION['loggedin'] = false;
 }
 include 'db.php';
+include "classes/movie.php";
+include "db_conn.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,6 +55,14 @@ include 'db.php';
       padding: 0;
       box-sizing: border-box;
       font-family: "Poppins" , sans-serif;
+    }
+    img{
+    width: 100%;
+    height: 35vh;
+    border-radius: 5%;
+    }
+    .card-title {
+        height: 15vh;
     }
     .sidebar{
       position: fixed;
@@ -445,10 +455,13 @@ include 'db.php';
           <span class="tooltip">Search</span>
       </div>
               <!-- <div class="container"> -->
-                  <div class="row">
+                  <!-- <div class="row">
                       <div class="col-md-3">
                           <div class="card">
-                              <img src="images/thor-love-and-thunder-poster.jpg" alt="">       
+                              <?php 					
+                                $movies = new Movie($conn);
+                                $movies->output();
+                              ?>       
                                   <h1>Thỏ bay màu</h1>
                                   <h3>
                                   <span>
@@ -648,8 +661,11 @@ include 'db.php';
                                   </p>
                           </div>
                       </div>
-                  </div>
-
+                  </div> -->
+        <div class="row">
+                  <?php $movies = new Movie($conn);
+                    $movies->output(); ?>
+        </div>
     </section>
 
 
