@@ -88,63 +88,21 @@
 
 
 <!-- CAROUSEL FOR ROMANTIC MOVIES -->
-<div class="container-fluid pt-lg-5">
+<div class="container-fluid pt-lg-5 pb-5">
   <div class="tile">
     <h2 style="color: white;" >Romantic movies:</h2>
   </div>
         <div class="row">
             <div class="col-12">
                 <div class="owl-carousel owl-theme">
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="images/thor-love-and-thunder-poster.jpg" alt="" >
-                        </div>
-                    </div>
+                <?php 
+					include "classes/movie.php";
+					include "db_conn.php";
+					
+                    $movies = new Movie($conn);
+                    $movies->displayMovie();
+					
+                 ?>   
                 </div>
             </div>
         </div>
