@@ -71,7 +71,7 @@
         </div>
         <div class="film-info" style="display: grid; grid-template-columns: 1fr 2fr;">
           <h3>2022 ‧ Action/Adventure<hr></h3> 
-          <div class="watch-btn"> <a class="btn btn-lg btn-outline-warning" href="moviedetail.php" role="button">Watch Now</a></div>
+          <div class="watch-btn"> <a class="btn btn-lg btn-outline-warning" href="Moviedetail.php?id=29" role="button">Watch Now</a></div>
           
         </div>
         <div class="film-detail">
