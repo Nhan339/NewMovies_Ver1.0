@@ -42,7 +42,7 @@ if(isset($_POST['edit'])) {
   <div class="row">
       
       <div class="mt-3 col-md-6 offset-md-3">
-        <h1>Edit here, bitch</h1>
+        <h1>Edit here</h1>
         
         <form action="editMovie.php" method="post" enctype="multipart/form-data">     
           <label for="movie_name">Movie name</label>
