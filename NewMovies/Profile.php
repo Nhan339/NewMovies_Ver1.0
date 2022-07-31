@@ -105,6 +105,10 @@
         </div>
         <div class="modal-body">
           <form action="Profile.php" method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Image:</label>
+              <input type="file" class="form-control" id="recipient-name" name="profile_pic" value="">
+            </div>
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label">Name:</label>
               <input type="text" class="form-control" id="recipient-name" name="profile_pic" value="">

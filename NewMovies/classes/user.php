@@ -5,6 +5,7 @@ class User {
     public $user_email;
     public $user_role;
     public $profile_img;
+    public $user_des;
     public $conn;
     public $user_password1;
     public $user_password2;
