@@ -14,9 +14,10 @@
   }
   if(isset($_POST['confirm'])) {
     $profile_desc = $_POST['description'];
+    $profile_name = $_POST['username'];
     $profile = new User($conn);
     $user_id = $_SESSION['user_id'];
-    $profile->editProfileDesc($profile_desc, $user_id);
+    $profile->editProfileDesc($profile_name, $profile_desc, $user_id);
   }
   // var_dump($_FILES);
   //var_dump($_POST['update']);
@@ -85,7 +86,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Change Imange</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Change Image</h5>
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -115,8 +116,8 @@
         <div class="modal-body">
           <form action="Profile.php" method="post" enctype="multipart/form-data">
           <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Image:</label>
-              <input type="file" class="form-control" id="recipient-name" name="profile_pic" value="">
+              <label for="recipient-name" class="col-form-label">Username:</label>
+              <input type="text" class="form-control" id="recipient-name" name="username" value="<?php echo htmlspecialchars($_SESSION['user_name']); ?>">
             </div>
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label">Description:</label>

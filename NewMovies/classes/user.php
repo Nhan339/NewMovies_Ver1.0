@@ -106,15 +106,16 @@ class User {
         header("Location: Profile.php");
         
     }
-    public function editProfileDesc($profile_desc, $user_id) {
+    public function editProfileDesc($user_name, $profile_desc, $user_id) {
+      $this->user_name = $user_name;
       $this->profile_desc = $profile_desc;
       $this->user_id = $user_id;
       $this->getUserId($this->user_id);
       $sql = "UPDATE users
-              SET user_description = ?
+              SET user_name = ?, user_description = ?
               WHERE ID = $user_id";
       $stmt = $this->conn->prepare($sql);
-      $stmt->bind_param("s", $this->profile_desc);
+      $stmt->bind_param("ss", $this->user_name, $this->profile_desc);
       $stmt->execute();
       if($stmt->affected_rows == 1) {
         $this->getUserId($this->user_id);
@@ -156,6 +157,7 @@ class User {
     }
     public function profile_desc() {
       $_SESSION['description'] = $this->users['user_description'];
+      $_SESSION['user_name'] = $this->users['user_name'];
     }
     public function login() {
       $_SESSION['user_id'] = $this->users['ID'];
