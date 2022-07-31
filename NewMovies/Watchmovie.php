@@ -48,7 +48,7 @@
 <!-- Comments -->
 <hr>
     <div class="container">
-      <h3 class="display-4 mt-3 mb-3">Comments</h3>
+      <h3 class="display-4 mt-3 mb-3 text-white">Comments</h3>
       <hr>
       <?php if ($_SESSION['loggedin']): ?>
     

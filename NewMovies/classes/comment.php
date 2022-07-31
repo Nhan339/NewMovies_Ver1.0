@@ -70,7 +70,7 @@ class Comment {
             </div>
 
             <div class='card-body'>
-              <p class='card-text comment-p'>{$comment['comment_text']} </p>
+              <p class='card-text comment-p text-black'>{$comment['comment_text']} </p>
             </div>
           </div>
         </div> 
