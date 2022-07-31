@@ -106,11 +106,12 @@ CREATE TABLE IF NOT EXISTS `users` (
   `ID` int(10) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `profile_img` varchar(255) NOT NULL,
   `hash` varchar(255) NOT NULL,
+  `profile_img` varchar(255) DEFAULT NULL,
+  `user_description` varchar(1000) DEFAULT NULL,
   `user_role` int(10) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=246 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=252 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`

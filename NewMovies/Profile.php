@@ -51,6 +51,9 @@
     left: 707px;
     border: none;
 }
+.profile {
+  object-fit: cover;
+}
 </Style>
     <div class="container-profile">
       <div class="cover-photo">
