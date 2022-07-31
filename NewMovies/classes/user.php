@@ -5,6 +5,7 @@ class User {
     public $user_email;
     public $user_role;
     public $profile_img;
+    public $profile_desc;
     public $conn;
     public $user_password1;
     public $user_password2;
@@ -31,6 +32,17 @@ class User {
         if($results->num_rows == 1) {
           $this->users = $results->fetch_assoc();
         }
+    }
+    public function getUserId($user_id) {
+      $this->user_id = $user_id;
+      $sql = "SELECT * FROM users WHERE ID = ?";
+      $stmt = $this->conn->prepare($sql);
+      $stmt->bind_param("i", $this->user_id);
+      $stmt->execute();
+      $results = $stmt->get_result();
+      if($results->num_rows == 1) {
+        $this->users = $results->fetch_assoc();
+      }
     }
     public function checkEmails($user_email) {
       $this->user_email = $user_email;
@@ -66,9 +78,10 @@ class User {
       $this->user_role = 3;
       $this->user_hash = password_hash($this->user_password1, PASSWORD_DEFAULT);
       $this->profile_img = "images/Default.jpg";
-      $sql = "INSERT INTO users (user_name, email, hash, profile_img, user_role) VALUES (?,?,?,?,?)";
+      $this->profile_desc = "You can change your description here for your profile!!!";
+      $sql = "INSERT INTO users (user_name, email, hash, profile_img, user_description, user_role) VALUES (?,?,?,?,?,?)";
       $stmt = $this->conn->prepare($sql);
-      $stmt->bind_param("ssssi", $this->user_name, $this->user_email, $this->user_hash, $this->profile_img, $this->user_role);
+      $stmt->bind_param("sssssi", $this->user_name, $this->user_email, $this->user_hash, $this->profile_img, $this->profile_desc, $this->user_role);
       $stmt->execute();
       if($stmt->affected_rows == 1) {
         $this->getUsername();
@@ -91,6 +104,22 @@ class User {
       }
         header("Location: Profile.php");
         
+    }
+    public function editProfileDesc($profile_desc, $user_id) {
+      $this->profile_desc = $profile_desc;
+      $this->user_id = $user_id;
+      $this->getUserId($this->user_id);
+      $sql = "UPDATE users
+              SET user_description = ?
+              WHERE ID = $user_id";
+      $stmt = $this->conn->prepare($sql);
+      $stmt->bind_param("s", $this->profile_desc);
+      $stmt->execute();
+      if($stmt->affected_rows == 1) {
+        $this->getUserId($this->user_id);
+        $this->profile_desc();
+      }
+      header("Location: Profile.php");
     }
     public function checkNewUser($user_name, $user_email, $user_password1, $user_password2) {
         $this->user_name = $user_name;
@@ -123,6 +152,9 @@ class User {
           $this->createAccount();
           //$this->createTeacherAccount();
         }
+    }
+    public function profile_desc() {
+      $_SESSION['description'] = $this->users['user_description'];
     }
     public function login() {
       $_SESSION['user_id'] = $this->users['ID'];

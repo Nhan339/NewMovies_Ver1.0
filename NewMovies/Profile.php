@@ -12,6 +12,12 @@
     $user_id = $_SESSION['user_id'];
     $profile->editProfile($profile_img, $user_id);
   }
+  if(isset($_POST['confirm'])) {
+    $profile_desc = $_POST['description'];
+    $profile = new User($conn);
+    $user_id = $_SESSION['user_id'];
+    $profile->editProfileDesc($profile_desc, $user_id);
+  }
   // var_dump($_FILES);
   //var_dump($_POST['update']);
   //var_dump($_POST['profile_pic']);
@@ -66,7 +72,7 @@
         data-mdb-whatever="@fat"><i class="fa fa-camera" aria-hidden="true"></i></button>
       </div>
       <div class="profile-name"><?php echo htmlspecialchars($_SESSION['user_name']) ?></div>
-      <p class="about">User Interface Designer and<br>front-end developer</p>
+      <p class="about"><?php echo htmlspecialchars($_SESSION['description']) ?></p>
       <button class="follow-btn" data-mdb-toggle="modal" data-mdb-target="#updateModal"
         data-mdb-whatever="@fat">Update</button>
     </div>
@@ -106,16 +112,12 @@
         <div class="modal-body">
           <form action="Profile.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Name:</label>
-              <input type="text" class="form-control" id="recipient-name" name="profile_pic" value="">
-            </div>
-            <div class="mb-3">
               <label for="recipient-name" class="col-form-label">Description:</label>
-              <input type="text" class="form-control" id="recipient-name" name="profile_pic" value="">
+              <input type="text" class="form-control" id="recipient-name" name="description" value="">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" name="update">Update</button>
+              <button type="submit" class="btn btn-primary" name="confirm">Update</button>
             </div>
           </form>
         </div>
