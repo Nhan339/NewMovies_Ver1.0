@@ -175,7 +175,6 @@ $film->Upload_movie();
       outline: none;
       height: 50px;
       width: 100%;
-      width: 50px;
       border: none;
       border-radius: 12px;
       transition: all 0.5s ease;
@@ -397,10 +396,10 @@ $film->Upload_movie();
               <form action="admin.php"
                     method="post"
                     enctype="multipart/form-data">
-
+                    <div class="all-input">
                 <div class="m-3">
                   <label for="vname" class="col-form-label">Movie Name</label>
-                  <input type="text" name="vname">
+                  <input class="input-field" type="text" name="vname">
                 </div>
                 <div class="m-3">
                   <label for="movie-details" class="col-form-label">Movie Details</label>
@@ -417,6 +416,7 @@ $film->Upload_movie();
                 <input type="submit"
                       name="submit" 
                       value="Upload">
+                  </div>
               </form>
               </div>
             </div>
