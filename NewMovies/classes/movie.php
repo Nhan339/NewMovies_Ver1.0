@@ -36,19 +36,21 @@ class Movie {
     public function updateMovie($movie_name, $movie_id) {
         $this->movie_id = $movie_id;
         $this->movie_name = $movie_name;
-        $this->getMovieDetails();
+        //var_dump($this->movie_id);
+        //$this->getMovieDetails();
         $sql = "UPDATE movies 
                 SET movie_name = ? 
                 WHERE movie_id = $movie_id";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("si", $this->movie_name, $this->movie_id);
+        $stmt->bind_param("s", $this->movie_name);
         $stmt->execute();
+        var_dump($stmt->affected_rows);
         if($stmt->affected_rows == 1) {
             $this->upload();
          }
     }
     public function upload() {
-        header("Location: admin.php");
+        header("Location: admin.php?edit=success");
     }
 
     public function Upload_movie() {
@@ -136,7 +138,7 @@ class Movie {
                                   <p>
                                   <span>
                                       <div class="row">
-                                          <div class="col-md-6"> <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark"><a href="editMovie.php"> Edit</a> <i class="fa-solid fa-pen-to-square"></i></button></div>
+                                          <div class="col-md-6"> <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark"><a href="editMovie.php?id='.$row['movie_id'].'"> Edit</a> <i class="fa-solid fa-pen-to-square"></i></button></div>
                                           <div class="col-md-6"> <a href="Watchmovie.php">
                                           <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Delete <i class="fa fa-trash" aria-hidden="true"></i></button>
                                           </a></div>

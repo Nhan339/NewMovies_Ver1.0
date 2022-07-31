@@ -1,14 +1,17 @@
 <?php
-include 'includes/header.php';
+include 'includes/adminheader.php';
 include 'classes/movie.php';
 //include 'view.php';
 $errors = [];
+if(isset($_GET['id'])) {
+    $_SESSION['movie_id'] = $_GET['id'];
+}
 if(isset($_POST['edit'])) {
-    $movie_id = $_GET['id'];
     $movie_name = $_POST['movie_name'];
     $movie = new Movie($conn);
-    $movie->updateMovie($movie_name, $movie_id);
+    $movie->updateMovie($movie_name, $_SESSION['movie_id']);
 }
+//var_dump($_SESSION['movie_id']);
 //var_dump($chapter);
 //var_dump($contentInfo);
 //var_dump($contentType);

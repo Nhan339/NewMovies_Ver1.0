@@ -3,9 +3,7 @@ session_start();
 if (!isset($_SESSION['loggedin'])) {
   $_SESSION['loggedin'] = false;
 }
-include 'db.php';
-//var_dump($_SESSION['user_role']);
-?>
+include 'db.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,7 +14,6 @@ include 'db.php';
     <!-- MDB icon -->
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1038/1038100.png" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -27,7 +24,6 @@ include 'db.php';
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
     />
-
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -38,15 +34,12 @@ include 'db.php';
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
-        
-        
     <!-- MDB -->
     <link rel="stylesheet" href="css/mdb.min.css" />
-
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <style>
+</head>
+<style>
     .sidebar li {
     position: relative;
     margin: 8px 0;
@@ -65,7 +58,6 @@ include 'db.php';
   transition: all 0.5s ease;
   background: #1d1b31;
 }
-
 .sidebar .fa-search {
     position: absolute;
     top: 50%;
@@ -75,8 +67,8 @@ include 'db.php';
     background: #1d1b31;
     color: #FFF;
 }
-  </style>
-  <body>
+</style>
+<body>
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
@@ -85,7 +77,6 @@ include 'db.php';
       </div>
       <div class="site-mobile-menu-body"></div>
     </div> <!-- .site-mobile-menu -->
-    
     <div class="site-navbar-wrap">
       <div class="site-navbar-top">
         <div class="container py-3">
@@ -113,33 +104,20 @@ include 'db.php';
           </div>
         </div>
       </div>
-
       <div class="site-navbar site-navbar-target js-sticky-header">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-2">
               <h1 class="my-0 site-logo"
-              style=" 
-              background: -webkit-linear-gradient(orange, #333);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-              height: 3vh;
-              top: 0px;
-              ">
+              style="background: -webkit-linear-gradient(orange, #333); -webkit-background-clip: text; -webkit-text-fill-color: transparent; height: 3vh; top: 0px;">
               <a href="Homepage.php">NewMovies</a></h1>
             </div>
             <div class="col-7">
               <nav class="site-navigation text-right" role="navigation">
                 <div class="container">
                   <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
-
                   <ul class="site-menu main-menu js-clone-nav d-none d-lg-block"  style="text-align: end;">
                   <div class="sidebar">
-                    <!-- <li>
-                        <i class="fas fa-search    "></i>
-                        <input type="text" placeholder="Search...">
-                        <span class="tooltip">Search</span>
-                    </li> -->
                   </div>
                     <li class="active"><a href="#home-section" class="nav-link">Home</a></li>
                     <li><a href="#classes-section" class="nav-link">Classes</a></li>
