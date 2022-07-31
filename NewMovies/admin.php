@@ -450,9 +450,7 @@ $film->Upload_movie();
             </div>
                 <button class="btn-primary" type="submit" name="ok" value="search" style="visibility: hidden;"> Search <span></span> </button>
           </form>
-      </div>
-
-                                  
+      </div>             
         <div class="row">
         <?php     include 'function/search.php'; ?>
         
