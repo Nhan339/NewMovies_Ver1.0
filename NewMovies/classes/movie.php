@@ -90,7 +90,7 @@ class Movie {
                     $sql = "INSERT INTO movies(movie_url, movie_name, movie_img, movie_details) 
                            VALUES('$video_url', '$vid_name', '$movie_img', '$movie_details')";
                     mysqli_query($conn, $sql);
-                    header("Location: view.php");
+                    header("Location: admin.php");
                 }else {
                     $em = "You can't upload files of this type";
                     header("Location: admin.php?error=$em");

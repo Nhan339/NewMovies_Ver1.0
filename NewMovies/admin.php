@@ -1,11 +1,22 @@
 <?php
 session_start();
-if (!isset($_SESSION['loggedin'])) {
-  $_SESSION['loggedin'] = false;
-}
 include 'db.php';
 include "classes/movie.php";
 include "db_conn.php";
+if (!isset($_SESSION['loggedin'])) {
+  $_SESSION['loggedin'] = false;
+}
+
+if(isset($_POST['submit']) && isset($_FILES['my_video'])) {
+$video_name = $_FILES['my_video']['name'];
+$vid_name = $_POST['vname'];
+$tmp_name = $_FILES['my_video']['tmp_name'];
+$error = $_FILES['my_video']['error'];
+
+$film = new Movie($conn);
+$film->Upload_movie();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -324,6 +335,9 @@ include "db_conn.php";
       background: #1d1b31;
       padding: 0 50px;
     }
+    .modal-backdrop.fade.show {
+    visibility: hidden;
+    }
     @media (max-width: 420px) {
       .sidebar li .tooltip{
         display: none;
@@ -360,13 +374,54 @@ include "db_conn.php";
         </a>
         <span class="tooltip">File Manager</span>
       </li>
-      <!-- old upload -->
       <li>
-        <a href="upload.php">
+        
+        <a href="upload.php"          
+         type="button"
+          data-mdb-toggle="modal"
+          data-mdb-target="#uploadModal"
+          data-mdb-whatever="@mdo">
         <i class="fa fa-upload" aria-hidden="true"></i>
           <span class="links_name">Upload Movie</span>
         </a>
         <span class="tooltip">Upload Movie</span>
+
+        <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="uploadModalLabel">New message</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+              <form action="admin.php"
+                    method="post"
+                    enctype="multipart/form-data">
+
+                <div class="m-3">
+                  <label for="vname" class="col-form-label">Movie Name</label>
+                  <input type="text" name="vname">
+                </div>
+                <div class="m-3">
+                  <label for="movie-details" class="col-form-label">Movie Details</label>
+                  <textarea class="form-control" name="movie_details"></textarea>
+                </div>
+                <div class="m-3">
+                  <label for="Movie-url" class="col-form-label">Movie file</label>
+                  <input type="file" name="my_video">
+                </div>
+                <div class="m-3">
+                  <label for="Movie-img" class="col-form-label">Movie Image</label>
+                  <input type="file" name="movie_img">
+                </div>
+                <input type="submit"
+                      name="submit" 
+                      value="Upload">
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </li> 
 
    
@@ -509,6 +564,24 @@ include "db_conn.php";
                 items: 4
             },
         }
+    })
+</script>
+<script>
+  const exampleModal = document.getElementById('uploadModal');
+    exampleModal.addEventListener('show.mdb.modal', (e) => {
+      // Button that triggered the modal
+      const button = e.relatedTarget;
+      // Extract info from data-mdb-* attributes
+      const recipient = button.getAttribute('data-mdb-whatever');
+      // If necessary, you could initiate an AJAX request here
+      // and then do the updating in a callback.
+      //
+      // Update the modal's content.
+      const modalTitle = exampleModal.querySelector('.modal-title');
+      const modalBodyInput = exampleModal.querySelector('.modal-body input');
+
+      modalTitle.textContent = `New message to ${recipient}`;
+      modalBodyInput.value = recipient;
     })
 </script>
   </body>
