@@ -324,11 +324,6 @@ include "db_conn.php";
       background: #1d1b31;
       padding: 0 50px;
     }
-    i.fas.fa-search {
-    position: absolute;
-    top: 5%;
-    left: 7%;
-    }
     @media (max-width: 420px) {
       .sidebar li .tooltip{
         display: none;
@@ -344,95 +339,37 @@ include "db_conn.php";
           <i class="fa fa-bars" aria-hidden="true" id="btn"></i>
       </div>
       <ul class="nav-list">
+      <li>
+        <a href="admin.php">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+          <span class="links_name">Admin Page</span>
+        </a>
+        <span class="tooltip">Admin Page</span>
+      </li>
         <li>
         <a href="Homepage.php">
-          <i class='bx bx-folder' ></i>
+        <i class="fa fa-home" aria-hidden="true"></i>
           <span class="links_name">Home</span>
         </a>
-        <span class="tooltip">Files</span>
+        <span class="tooltip">Home</span>
       </li>
         <li>
         <a href="#">
-          <i class='bx bx-folder' ></i>
+        <i class="fa fa-folder" aria-hidden="true"></i>
           <span class="links_name">File Manager</span>
         </a>
-        <span class="tooltip">Files</span>
+        <span class="tooltip">File Manager</span>
       </li>
-
       <!-- old upload -->
       <li>
         <a href="upload.php">
-          <i class='bx bx-folder' ></i>
+        <i class="fa fa-upload" aria-hidden="true"></i>
           <span class="links_name">Upload Movie</span>
         </a>
-        <span class="tooltip">Files</span>
+        <span class="tooltip">Upload Movie</span>
       </li> 
 
-      <!-- new upload -->
-      <!-- ------------------------------------form upload------------------------------------ -->
-      <!-- <li>
-        <a href="upload2.php">
-          <i class='bx bx-folder' ></i>
-          <span class="links_name">Upload Movie</span>
-        </a>
-        <button
-          type="button"
-          class='bx bx-folder'
-          data-mdb-toggle="modal"
-          data-mdb-target="#exampleModal"
-          data-mdb-whatever="@mdo"
-        > Add NewMovies</button>
-        
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-        </div>
-
-        Thay doi form
-      <div class="modal-body">
-        <form>
-        Name
-        <div class="mb-3">
-            <label for="Movie-name" class="col-form-label">Movie Name</label>
-            <input type="text" class="form-control" id="movie-name" />
-        </div>
-        Description
-        <div class="mb-3">
-            <label for="Movie-Description" class="col-form-label">Movie Description:</label>
-            <textarea class="form-control" id="movie-description"></textarea>
-        </div>
-        Up Image
-        <div class="mb-3">
-            <label for="formFile" class="form-label">Choose Image For Movie</label>
-            <input class="form-control" type="file" id="movie-image">
-        </div>
-        Up Video
-        <div class="mb-3">
-            <label for="formFile" class="form-label">Choose Video For Movie</label>
-             <input class="form-control" type="file" id="movie-video">
-        </div>          
-
-        </form>
-      </div>
-      Thay doi form
-
-
-      <div class="modal-footer">        
-        <button class="upload_btn" type="button" class="btn btn-primary">Add New Movie</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-        <span class="tooltip">Files</span>
-      </li> -->
-
-      <!-- ------------------------------------form upload------------------------------------ -->
+   
 
 
       <li class="profile">
@@ -450,222 +387,31 @@ include "db_conn.php";
     <section class="home-section">
     <div class="container pt-lg-5 ">
       <div>
-          <i class="fas fa-search"></i>
-          <input type="text" placeholder="Search...">
-          <span class="tooltip">Search</span>
+          <form action="admin.php" method="get">
+              <div class="all-input">
+                <div>
+                  <input class="input-field" type="text" name="search" placeholder="Search...">
+                </div>
+            </div>
+                <button class="btn-primary" type="submit" name="ok" value="search" style="visibility: hidden;"> Search <span></span> </button>
+          </form>
       </div>
-              <!-- <div class="container"> -->
-                  <!-- <div class="row">
-                      <div class="col-md-3">
-                          <div class="card">
-                              <?php 					
-                                $movies = new Movie($conn);
-                                $movies->output();
-                              ?>       
-                                  <h1>Thỏ bay màu</h1>
-                                  <h3>
-                                  <span>
-                                  2022 ‧ Action/Adventure
-                                  </span>
-                                  </h3>
-                                  <br>
-                                  <p>
-                                  <span>
-                                      <div class="row">
-                                          <div class="col-md-6"> <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark"><a href="editMovie.php"> Edit</a> <i class="fa-solid fa-pen-to-square"></i></button></div>
-                                          <div class="col-md-6"> <a href="Watchmovie.php">
-                                          <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Delete <i class="fa fa-trash" aria-hidden="true"></i></button>
-                                          </a></div>
-                                      </div>
-                                  </span>
-                                  </p>
-                          </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="card">
-                              <img src="images/thor-love-and-thunder-poster.jpg" alt="">
-                                  <h1>Thỏ bay màu</h1>
-                                  <h3>
-                                  <span>
-                                  2022 ‧ Action/Adventure
-                                  </span>
-                                  </h3>
-                                  <br>
-                                  <p>
-                                  <span>
-                                      <div class="row">
-                                          <div class="col-md-6"> <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark">Edit</button></div>
-                                          <div class="col-md-6"> <a href="Watchmovie.php">
-                                          <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Delete</button>
-                                          </a></div>
-                                      </div>
-                                  </span>
-                                  </p>
-                          </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="card">
-                              <img src="images/thor-love-and-thunder-poster.jpg" alt="">       
-                                  <h1>Thỏ bay màu</h1>
-                                  <h3>
-                                  <span>
-                                  2022 ‧ Action/Adventure
-                                  </span>
-                                  </h3>
-                                  <br>
-                                  <p>
-                                  <span>
-                                      <div class="row">
-                                          <div class="col-md-6"> <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark">Edit</button></div>
-                                          <div class="col-md-6"> <a href="Watchmovie.php">
-                                          <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Delete</button>
-                                          </a></div>
-                                      </div>
-                                  </span>
-                                  </p>
-                          </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="card">
-                              <img src="images/thor-love-and-thunder-poster.jpg" alt="">       
-                                  <h1>Thỏ bay màu</h1>
-                                  <h3>
-                                  <span>
-                                  2022 ‧ Action/Adventure
-                                  </span>
-                                  </h3>
-                                  <br>
-                                  <p>
-                                  <span>
-                                      <div class="row">
-                                          <div class="col-md-6"> <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark">Edit</button></div>
-                                          <div class="col-md-6"> <a href="Watchmovie.php">
-                                          <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Delete</button>
-                                          </a></div>
-                                      </div>
-                                  </span>
-                                  </p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-md-3">
-                          <div class="card">
-                              <img src="images/thor-love-and-thunder-poster.jpg" alt="">       
-                                  <h1>Thỏ bay màu</h1>
-                                  <h3>
-                                  <span>
-                                  2022 ‧ Action/Adventure
-                                  </span>
-                                  </h3>
-                                  <br>
-                                  <p>
-                                  <span>
-                                      <div class="row">
-                                          <div class="col-md-6"> <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark">Edit</button></div>
-                                          <div class="col-md-6"> <a href="Watchmovie.php">
-                                          <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Delete</button>
-                                          </a></div>
-                                      </div>
-                                  </span>
-                                  </p>
-                          </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="card">
-                              <img src="images/thor-love-and-thunder-poster.jpg" alt="">       
-                                  <h1>Thỏ bay màu</h1>
-                                  <h3>
-                                  <span>
-                                  2022 ‧ Action/Adventure
-                                  </span>
-                                  </h3>
-                                  <br>
-                                  <p>
-                                  <span>
-                                      <div class="row">
-                                          <div class="col-md-6"> <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark">Edit</button></div>
-                                          <div class="col-md-6"> <a href="Watchmovie.php">
-                                          <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Delete</button>
-                                          </a></div>
-                                      </div>
-                                  </span>
-                                  </p>
-                          </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="card">
-                              <img src="images/thor-love-and-thunder-poster.jpg" alt="">       
-                                  <h1>Thỏ bay màu</h1>
-                                  <h3>
-                                  <span>
-                                  2022 ‧ Action/Adventure
-                                  </span>
-                                  </h3>
-                                  <br>
-                                  <p>
-                                  <span>
-                                      <div class="row">
-                                          <div class="col-md-6"> <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark">Edit</button></div>
-                                          <div class="col-md-6"> <a href="Watchmovie.php">
-                                          <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Delete</button>
-                                          </a></div>
-                                      </div>
-                                  </span>
-                                  </p>
-                          </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="card">
-                              <img src="images/thor-love-and-thunder-poster.jpg" alt="">       
-                                  <h1>Thỏ bay màu</h1>
-                                  <h3>
-                                  <span>
-                                  2022 ‧ Action/Adventure
-                                  </span>
-                                  </h3>
-                                  <br>
-                                  <p>
-                                  <span>
-                                      <div class="row">
-                                          <div class="col-md-6"> <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark">Edit</button></div>
-                                          <div class="col-md-6"> <a href="Watchmovie.php">
-                                          <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Delete</button>
-                                          </a></div>
-                                      </div>
-                                  </span>
-                                  </p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-md-3">
-                          <div class="card">
-                              <img src="images/thor-love-and-thunder-poster.jpg" alt="">       
-                                  <h1>Thỏ bay màu</h1>
-                                  <h3>
-                                  <span>
-                                  2022 ‧ Action/Adventure
-                                  </span>
-                                  </h3>
-                                  <br>
-                                  <p>
-                                  <span>
-                                      <div class="row">
-                                          <div class="col-md-6"> <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark">Edit</button></div>
-                                          <div class="col-md-6"> <a href="Watchmovie.php">
-                                          <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Delete</button>
-                                          </a></div>
-                                      </div>
-                                  </span>
-                                  </p>
-                          </div>
-                      </div>
-                  </div> -->
+
+                                  
         <div class="row">
-                  <?php $movies = new Movie($conn);
-                    $movies->output(); ?>
+        <?php     include 'function/search.php'; ?>
+        
+        <?php 
+          if (isset($_REQUEST['ok'])) {
+            search();
+          }
+          else {
+            $movies = new Movie($conn);
+            $movies->output();
+        }
+        ?>   
         </div>
+
     </section>
 
 
