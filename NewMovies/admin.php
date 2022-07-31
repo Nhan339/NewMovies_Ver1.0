@@ -71,6 +71,7 @@ $film->Upload_movie();
     width: 100%;
     height: 35vh;
     border-radius: 5%;
+    object-fit: cover;
     }
     .card-title {
         height: 15vh;
