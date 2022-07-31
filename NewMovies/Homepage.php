@@ -25,6 +25,10 @@
     visibility: hidden;
   }
 
+  .owl-carousel .owl-item img {
+    height: 25vh;
+  }
+
 </style>
 <!DOCTYPE html>
 <html lang="en">

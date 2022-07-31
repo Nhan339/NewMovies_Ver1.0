@@ -131,9 +131,12 @@
 
 
 <?php
- $queryIDCount = count($_SESSION['query_history']) - 2;
- $queryStrPos = strpos($_SESSION['query_history'][$queryIDCount],"id");
- $queryId = substr($_SESSION['query_history'][$queryIDCount],$queryStrPos);
- $queryId = explode("=", $queryId);
+if(isset($_POST['delete-comment'])){
+    $queryIDCount = count($_SESSION['query_history']) - 2;
+    $queryStrPos = strpos($_SESSION['query_history'][$queryIDCount],"id");
+    $queryId = substr($_SESSION['query_history'][$queryIDCount],$queryStrPos);
+    $queryId = explode("=", $queryId);
+  }
+
  include 'includes/footer.php';
 ?>

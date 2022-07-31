@@ -16,9 +16,11 @@ class Movie {
     // function getMovie($movie_id, $conn) {
     //     $sql = "SELECT * FROM movies WHERE movie_id = ?";
     //     $stmt = $this->conn->prepare($sql);
+    //     var_dump($stmt);
     //     $stmt->bind_param("i", $this->movie_id);
     //     $stmt->execute();
     //     $result = $stmt->get_result();
+        
     //     if($result->num_rows == 1) {
     //       return $result->fetch_assoc();
     //     }
@@ -99,14 +101,14 @@ class Movie {
         }
     }
 
-    public function getMovies() {
+    public function getMovies($movie_id) {
         $sql = "SELECT * FROM movies WHERE movie_id = ?";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("i", $this->movie_id);
+        $stmt->bind_param("i", $movie_id);
         $stmt->execute();
         $result = $stmt->get_result();
-        $this->movies = $result->fetch_all(MYSQLI_ASSOC);
-    }
+        $this->comments = $result->fetch_all(MYSQLI_ASSOC);
+      }
 
     public function output() {
         $host = "localhost";
@@ -175,6 +177,59 @@ class Movie {
      
             ';
           }
+          echo $output;
+    }
+
+    public function outputMoviesDetail($movie_id) {
+        $host = "localhost";
+        $user = "root";
+        $pw = "";
+        $db = "newmovies_db";
+        $conn = new mysqli($host, $user, $pw, $db);
+        $output = '';
+        $query = "SELECT * FROM movies where movie_id = $movie_id";
+        $sql = mysqli_query($conn, $query);
+        $row = mysqli_fetch_assoc($sql);
+            $output .= '
+            <div class="detail">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-thumbnail" src=" ' . $row['movie_img'] . '" alt="">
+                    <div class="content">
+                        <h1> ' . $row['movie_name'] . '</h1>
+                        <h3>
+                        <span>
+                        2022 ‧ Action/Adventures
+                        </span>
+                        </h3>
+                        <br>
+                        <p>
+                        <span>
+                            <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark">Add to play-list</button>
+                            
+                        
+                                 
+                               <a class="btn btn-outline-warning" href="Watchmovie.php?id=' . $row['movie_id'] . '">Watch Now</a>" 
+                            
+                        </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6"> 
+                            <h2>Detail movie:</h2>
+                        </div>
+                    <div class="w-100"></div>
+                        <div class="col-md-12"> <p> ' . $row['movie_details'] . '</p>
+                        </div>
+                        <button onclick="myFunction()" id="myBtn" style="color: white;border: #141414;background-color: #141414;width: fit-content; margin-left: 42%">Read more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            ';
+          
           echo $output;
     }
     
