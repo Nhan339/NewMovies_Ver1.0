@@ -332,7 +332,7 @@ $film->Upload_movie();
       border-radius: 12px;
       transition: all 0.5s ease;
       background: #1d1b31;
-      padding: 0 50px;
+      padding: 10px;
     }
     .modal-backdrop.fade.show {
     visibility: hidden;
