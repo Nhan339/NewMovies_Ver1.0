@@ -36,16 +36,17 @@ class Movie {
             $this->movie = $results->fetch_assoc();
           }
     }
-    public function updateMovie($movie_name, $movie_id) {
+    public function updateMovie($movie_name, $movie_details, $movie_id) {
         $this->movie_id = $movie_id;
         $this->movie_name = $movie_name;
+        $this->movie_details = $movie_details;
         //var_dump($this->movie_id);
         //$this->getMovieDetails();
         $sql = "UPDATE movies 
-                SET movie_name = ? 
+                SET movie_name = ?, movie_details = ?
                 WHERE movie_id = $movie_id";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("s", $this->movie_name);
+        $stmt->bind_param("ss", $this->movie_name, $this->movie_details);
         $stmt->execute();
         var_dump($stmt->affected_rows);
         if($stmt->affected_rows == 1) {
