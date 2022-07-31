@@ -1,8 +1,9 @@
 <?php
 include '../classes/Comment.php';
+include '../classes/movie.php';
 include '../classes/Reply.php';
 include '../classes/config.php';
-var_dump($_POST);
+var_dump($_GET);
 if(isset($_POST['comment-submit'])) {
   $movie_id = $_POST['id'];
   $comment_text = $_POST['comment-text'];
@@ -33,5 +34,14 @@ if(isset($_POST['reply-comment'])) {
   echo json_encode($reply);
   header("Location: ../Watchmovie.php?id=$movie_id");
 }
+
+if(isset($_GET['id'])){
+  $movie_id = $_GET['id'];
+  $post_id = $_SESSION['query_history'];
+  $movie = new Movie($post_id, $conn);
+  $movie->deleteMovie($movie_id);
+  header("Location: ../admin.php");
+}
+
 
  ?>

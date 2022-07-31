@@ -9,6 +9,7 @@ class Movie {
     public $movie_desc;
     public $movie = [];
     public $movies = [];
+    public $conn;
     public function __construct($conn) {
         $this->conn = $conn;
     }
@@ -35,16 +36,17 @@ class Movie {
             $this->movie = $results->fetch_assoc();
           }
     }
-    public function updateMovie($movie_name, $movie_id) {
+    public function updateMovie($movie_name, $movie_details, $movie_id) {
         $this->movie_id = $movie_id;
         $this->movie_name = $movie_name;
+        $this->movie_details = $movie_details;
         //var_dump($this->movie_id);
         //$this->getMovieDetails();
         $sql = "UPDATE movies 
-                SET movie_name = ? 
+                SET movie_name = ?, movie_details = ?
                 WHERE movie_id = $movie_id";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("s", $this->movie_name);
+        $stmt->bind_param("ss", $this->movie_name, $this->movie_details);
         $stmt->execute();
         var_dump($stmt->affected_rows);
         if($stmt->affected_rows == 1) {
@@ -90,7 +92,7 @@ class Movie {
                     $sql = "INSERT INTO movies(movie_url, movie_name, movie_img, movie_details) 
                            VALUES('$video_url', '$vid_name', '$movie_img', '$movie_details')";
                     mysqli_query($conn, $sql);
-                    header("Location: view.php");
+                    header("Location: admin.php");
                 }else {
                     $em = "You can't upload files of this type";
                     header("Location: admin.php?error=$em");
@@ -141,9 +143,10 @@ class Movie {
                                   <span>
                                       <div class="row">
                                           <div class="col-md-6"> <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark"><a href="editMovie.php?id='.$row['movie_id'].'"> Edit</a> <i class="fa-solid fa-pen-to-square"></i></button></div>
-                                          <div class="col-md-6"> <a href="Watchmovie.php">
-                                          <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Delete <i class="fa fa-trash" aria-hidden="true"></i></button>
-                                          </a></div>
+                                          <div class="col-md-6"  method="POST" action="function/manager.php"> <a href="function/manager.php?id='.$row['movie_id'].'">
+                                          <button data-comment-id='. $row['movie_id'] .' type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Delete <i class="fa fa-trash" aria-hidden="true"></i></button>
+                                          </a>
+                                          </div>
                                       </div>
                                   </span>
                                   </p>
@@ -234,6 +237,19 @@ class Movie {
           
           echo $output;
     }
+
     
+    public function deleteMovie($movie_id) {
+        if($_SESSION['user_role'] == 1) {
+            $host = "localhost";
+            $user = "root";
+            $pw = "";
+            $db = "newmovies_db";
+            $conn = new mysqli($host, $user, $pw, $db);
+            $query = "DELETE FROM movies WHERE movie_id = $movie_id";
+            $sql = mysqli_query($conn, $query);
+         
+        } 
+      }
 }
 ?>

@@ -13,6 +13,15 @@
     
   }
 ?>
+<style>
+.owl-nav {
+    visibility: hidden;
+  }
+
+  .owl-carousel .owl-item img {
+    height: 30vh;
+  }
+</style>
 <link rel="stylesheet" href="css/watch.css">
 
 <div class="space" style="padding-top: 8rem;"></div>
@@ -39,7 +48,7 @@
 <!-- Comments -->
 <hr>
     <div class="container">
-      <h3 class="display-4 mt-3 mb-3">Comments</h3>
+      <h3 class="display-4 mt-3 mb-3 text-white">Comments</h3>
       <hr>
       <?php if ($_SESSION['loggedin']): ?>
     
@@ -67,67 +76,23 @@
 
 
 <!-- Similar Content -->
-<div class="container-fluid pt-lg-5">
-  <div class="tile">
-    <h2 style="color: orange;" >Similar content:</h2>
-  </div>
-  <div class="row">
-            <div class="col-12">
-                <div class="owl-carousel owl-theme">
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 shadow">
-                            <img src="https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg" alt="" >
+        <div class="container-fluid pt-lg-5 pb-5">
+            <div class="tile">
+             <h2 style="color: orange;" >Similar content:</h2>
+            </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="owl-carousel owl-theme">
+                            <?php 
+                                include "db_conn.php";
+                                
+                                $movies = new Movie($conn);
+                                $movies->displayMovie(); 
+                            ?>   
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-</div>
 
 
 <?php

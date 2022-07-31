@@ -8,8 +8,9 @@ if(isset($_GET['id'])) {
 }
 if(isset($_POST['edit'])) {
     $movie_name = $_POST['movie_name'];
+    $movie_details = $_POST['movie_info'];
     $movie = new Movie($conn);
-    $movie->updateMovie($movie_name, $_SESSION['movie_id']);
+    $movie->updateMovie($movie_name, $movie_details, $_SESSION['movie_id']);
 }
 //var_dump($_SESSION['movie_id']);
 //var_dump($chapter);
