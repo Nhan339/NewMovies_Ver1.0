@@ -160,6 +160,7 @@ class User {
     public function login() {
       $_SESSION['user_id'] = $this->users['ID'];
       $_SESSION['user_name'] = $this->users['user_name'];
+      $_SESSION['description'] = $this->users['user_description'];
       $_SESSION['user_role'] = $this->users['user_role'];
       $_SESSION['loggedin'] = true;
       if($_SESSION['user_role'] == 1) {

@@ -117,7 +117,7 @@
             </div>
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label">Description:</label>
-              <input type="text" class="form-control" id="recipient-name" name="description" value="">
+              <input type="text" class="form-control" id="recipient-name" name="description" value="<?php echo htmlspecialchars($_SESSION['description']);?>">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
